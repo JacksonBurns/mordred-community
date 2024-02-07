@@ -44,4 +44,4 @@ jobs:
           git config user.email "github-actions@github.com"
           cd docs
           touch _build/html/.nojekyll
-          cd _build/html; git add -A .; git commit -m "Automated documentation rebuild"; git push official gh-pages
+          cd _build/html; git add -f -A .; git commit -m "Automated documentation rebuild"; git push official gh-pages
