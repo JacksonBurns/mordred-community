@@ -49,6 +49,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           cd docs
-          touch _build/html/.nojekyll
-          cp -a _build/. .
+          cp -r _build/html/* .
+          cp -r _build/doctrees/* .
+          echo "" > .nojekyll
           git add -f -A .; git commit -m "Automated documentation rebuild" || true ; git push -f
