@@ -19,6 +19,8 @@ jobs:
     name: Build and Push Documentation
     steps:
       - uses: actions/checkout@v3
+        with:
+           fetch-depth: 0
       - uses: mamba-org/setup-micromamba@main
         with:
           environment-name: temp
