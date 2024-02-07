@@ -18,9 +18,13 @@ jobs:
         shell: bash -el {0}
     name: Build and Push Documentation
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-           fetch-depth: 0
+          ref: gh-pages
+      - name: Update Docs to Main    
+        run: |
+          git fetch --all
+          git reset --hard origin/main
       - uses: mamba-org/setup-micromamba@main
         with:
           environment-name: temp
@@ -46,4 +50,4 @@ jobs:
           git config user.email "github-actions@github.com"
           cd docs
           touch _build/html/.nojekyll
-          cd _build/html; git add -f -A .; git commit -m "Automated documentation rebuild"; git push origin gh-pages
+          cd _build/html; git add -f -A .; git commit -m "Automated documentation rebuild" || true ; git push -f
