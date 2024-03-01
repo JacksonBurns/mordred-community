@@ -92,7 +92,7 @@ class MolecularDistanceEdge(Descriptor):
                     message="overflow encountered in reduce",
                     category=RuntimeWarning,
                 )
-                dx = prod(Dv) ** (1.0 / (2.0 * n), dtype=float128)
+                dx = prod(Dv, dtype=float128) ** (1.0 / (2.0 * n))
 
         return n / (dx**2)
 
