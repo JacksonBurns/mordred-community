@@ -1,6 +1,6 @@
 from six import string_types, integer_types
 import warnings
-from numpy import prod, float128
+from numpy import prod, longdouble
 
 from ._base import Descriptor
 from ._graph_matrix import Valence, DistanceMatrix
@@ -92,7 +92,7 @@ class MolecularDistanceEdge(Descriptor):
                     message="overflow encountered in reduce",
                     category=RuntimeWarning,
                 )
-                dx = prod(Dv, dtype=float128) ** (1.0 / (2.0 * n))
+                dx = prod(Dv, dtype=longdouble) ** (1.0 / (2.0 * n))
 
         return n / (dx**2)
 
