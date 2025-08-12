@@ -14,5 +14,5 @@ class MordredDataFrame(DataFrame):
     def fill_missing(self, value=np.nan, inplace=False):
         t = self if inplace else self.copy()
 
-        t[t.applymap(is_missing)] = value
+        t[t.map(is_missing)] = value
         return t
