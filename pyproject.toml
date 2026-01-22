@@ -8,7 +8,7 @@ version = "2.0.7"
 authors = [{ name = "Jackson Burns", email = "jwburns@mit.edu" }]
 license = { text = "BSD-3-Clause" }
 description = "Community-Maintained Version of mordred"
-classifiers = [,
+classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
