@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Matrix aggregating methods &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Descriptor List" href="descriptors.html" />
+    <link rel="prev" title="atomic properties" href="atomic_prop.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="descriptors.html" title="Descriptor List"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="atomic_prop.html" title="atomic properties"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Matrix aggregating methods</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="matrix-aggregating-methods">
+<span id="id1"></span><h1>Matrix aggregating methods<a class="headerlink" href="#matrix-aggregating-methods" title="Link to this heading">¶</a></h1>
+<section id="spabs">
+<h2>SpAbs<a class="headerlink" href="#spabs" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SpAbs} = \sum_{i = 1}^N \left| \lambda_i \right|\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is <span class="math notranslate nohighlight">\(i\)</span>-th eigenvalue.</p>
+</section>
+<section id="spmax">
+<h2>SpMax<a class="headerlink" href="#spmax" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SpMax} = \max_{i = 1}^N \lambda_i\]</div>
+</section>
+<section id="spdiam">
+<h2>SpDiam<a class="headerlink" href="#spdiam" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SpDiam} = {\rm SpMax} - {\rm SpMin}\]</div>
+</section>
+<section id="spad">
+<h2>SpAD<a class="headerlink" href="#spad" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SpAD} = \sum_{i = 1}^N \left| \lambda_i - \bar{\lambda} \right|\]</div>
+</section>
+<section id="spmad">
+<h2>SpMAD<a class="headerlink" href="#spmad" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SpMAD} = \frac{\rm SpAD}{A}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is number of atoms.</p>
+</section>
+<section id="logee">
+<h2>LogEE<a class="headerlink" href="#logee" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm LogEE} = \log(\sum_{i = 1}^N \exp(\lambda_i))\]</div>
+</section>
+<section id="sm1">
+<h2>SM1<a class="headerlink" href="#sm1" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm SM1} = \sum_{i = 1}^N \lambda_i\]</div>
+</section>
+<section id="ve1">
+<h2>VE1<a class="headerlink" href="#ve1" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VE1} = \sum_{i = 1}^N \left| \ell_i \right|\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ell_i\)</span> is eigenvector elements corresponding to leading eigenvalue.</p>
+</section>
+<section id="ve2">
+<h2>VE2<a class="headerlink" href="#ve2" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VE2} = \frac{\rm VE1}{A}\]</div>
+</section>
+<section id="ve3">
+<h2>VE3<a class="headerlink" href="#ve3" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VE3} = \log(\frac{A}{10} \cdot {\rm VE1})\]</div>
+<p>NaN when <span class="math notranslate nohighlight">\({\rm VE1} = 0\)</span>.</p>
+</section>
+<section id="vr1">
+<h2>VR1<a class="headerlink" href="#vr1" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VR1} = \sum_{(i, j) \in {\rm bonds}} \left( \ell_i \cdot \ell_j \right)^{-1/2}\]</div>
+</section>
+<section id="vr2">
+<h2>VR2<a class="headerlink" href="#vr2" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VR2} = \frac{\rm VR1}{A}\]</div>
+</section>
+<section id="vr3">
+<h2>VR3<a class="headerlink" href="#vr3" title="Link to this heading">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[{\rm VR3} = \log(\frac{A}{10} \cdot {\rm VR1})\]</div>
+<p>NaN when <span class="math notranslate nohighlight">\({\rm VR1} = 0\)</span>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Matrix aggregating methods</a><ul>
+<li><a class="reference internal" href="#spabs">SpAbs</a></li>
+<li><a class="reference internal" href="#spmax">SpMax</a></li>
+<li><a class="reference internal" href="#spdiam">SpDiam</a></li>
+<li><a class="reference internal" href="#spad">SpAD</a></li>
+<li><a class="reference internal" href="#spmad">SpMAD</a></li>
+<li><a class="reference internal" href="#logee">LogEE</a></li>
+<li><a class="reference internal" href="#sm1">SM1</a></li>
+<li><a class="reference internal" href="#ve1">VE1</a></li>
+<li><a class="reference internal" href="#ve2">VE2</a></li>
+<li><a class="reference internal" href="#ve3">VE3</a></li>
+<li><a class="reference internal" href="#vr1">VR1</a></li>
+<li><a class="reference internal" href="#vr2">VR2</a></li>
+<li><a class="reference internal" href="#vr3">VR3</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="atomic_prop.html"
+                          title="previous chapter">atomic properties</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="descriptors.html"
+                          title="next chapter">Descriptor List</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/matrix.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="descriptors.html" title="Descriptor List"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="atomic_prop.html" title="atomic properties"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Matrix aggregating methods</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

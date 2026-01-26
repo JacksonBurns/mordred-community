@@ -1,0 +1,1869 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.CPSA module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.CarbonTypes module" href="mordred.CarbonTypes.html" />
+    <link rel="prev" title="mordred.BondCount module" href="mordred.BondCount.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.CarbonTypes.html" title="mordred.CarbonTypes module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.BondCount.html" title="mordred.BondCount module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.CPSA module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.CPSA">
+<span id="mordred-cpsa-module"></span><h1>mordred.CPSA module<a class="headerlink" href="#module-mordred.CPSA" title="Link to this heading">¶</a></h1>
+<p>charged partial surface area descriptor.</p>
+<dl class="simple">
+<dt>References</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://dx.doi.org/10.1021/ac00220a013">doi:10.1021/ac00220a013</a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">PNSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PNSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.PNSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VersionCPSABase</span></code></p>
+<p>partial negative surface area descriptor.</p>
+<div class="math notranslate nohighlight">
+\[{\rm PNSA}_1 = \sum_{a-} {\rm SA}_a^-\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sum_{a-}\)</span> means sum over negative charged atoms,
+<span class="math notranslate nohighlight">\({\rm SA}_a^-\)</span> is atomic partial surface area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.PNSA.versions" title="mordred.CPSA.PNSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PNSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.PNSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.PNSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.PNSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PNSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PNSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.PNSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">PPSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.PPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.PNSA" title="mordred.CPSA.PNSA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PNSA</span></code></a></p>
+<p>partial positive surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.PPSA.versions" title="mordred.CPSA.PPSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#PPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.PPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.PPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.PPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.PPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.PPSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.PPSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">DPSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#DPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.DPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VersionCPSABase</span></code></p>
+<p>difference in charged partial surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.DPSA.versions" title="mordred.CPSA.DPSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#DPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.DPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.DPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.DPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.DPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.DPSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.DPSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">FNSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FNSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.FNSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VersionCPSABase</span></code></p>
+<p>fractional charged partial negative surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.FNSA.versions" title="mordred.CPSA.FNSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FNSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.FNSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.FNSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.FNSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FNSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FNSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.FNSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">FPSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.FPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal notranslate"><span class="pre">FNSA</span></code></a></p>
+<p>fractional charged partial positive surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.FPSA.versions" title="mordred.CPSA.FPSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#FPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.FPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.FPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.FPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.FPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.FPSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.FPSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">WNSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WNSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.WNSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FNSA" title="mordred.CPSA.FNSA"><code class="xref py py-class docutils literal notranslate"><span class="pre">FNSA</span></code></a></p>
+<p>surface weighted charged partial negative surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.WNSA.versions" title="mordred.CPSA.WNSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WNSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.WNSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.WNSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.WNSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WNSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WNSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.WNSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">WPSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.WPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.FPSA" title="mordred.CPSA.FPSA"><code class="xref py py-class docutils literal notranslate"><span class="pre">FPSA</span></code></a></p>
+<p>surface weighted charged partial positive surface area descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – one of <a class="reference internal" href="#mordred.CPSA.WPSA.versions" title="mordred.CPSA.WPSA.versions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">versions</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#WPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.WPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.WPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',)</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.WPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.WPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.WPSA.versions">
+<span class="sig-name descname"><span class="pre">versions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></em><a class="headerlink" href="#mordred.CPSA.WPSA.versions" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RNCG</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RNCG" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CPSABase</span></code></p>
+<p>relative negative charge descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCG.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RNCG.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RNCG.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RNCG.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RNCG.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCG.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCG.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RPCG</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPCG" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RNCG" title="mordred.CPSA.RNCG"><code class="xref py py-class docutils literal notranslate"><span class="pre">RNCG</span></code></a></p>
+<p>relative positive charge descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCG.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPCG.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RPCG.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPCG.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RPCG.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCG.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCG.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RNCS</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RNCS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CPSABase</span></code></p>
+<p>relative negative charge surface area descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RNCS.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RNCS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RNCS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RNCS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RNCS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RNCS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RNCS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RPCS</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPCS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RNCS" title="mordred.CPSA.RNCS"><code class="xref py py-class docutils literal notranslate"><span class="pre">RNCS</span></code></a></p>
+<p>relative positive charge surface area descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPCS.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPCS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RPCS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPCS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RPCS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPCS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPCS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">TASA</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#TASA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.TASA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CPSABase</span></code></p>
+<p>total hydrophobic surface area descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.TASA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#TASA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.TASA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.TASA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.TASA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.TASA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.TASA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.TASA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.TASA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.TASA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TASA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TASA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">TPSA</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#TPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.TPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.TASA" title="mordred.CPSA.TASA"><code class="xref py py-class docutils literal notranslate"><span class="pre">TASA</span></code></a></p>
+<p>total polar surface area descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#TPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.TPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.TPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.TPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.TPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.TPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.TPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RASA</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RASA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RASA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CPSABase</span></code></p>
+<p>relative hydrophobic surface area descriptor.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RASA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RASA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RASA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RASA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RASA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RASA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RASA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RASA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RASA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RASA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RASA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RASA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.CPSA.</span></span><span class="sig-name descname"><span class="pre">RPSA</span></span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.CPSA.RASA" title="mordred.CPSA.RASA"><code class="xref py py-class docutils literal notranslate"><span class="pre">RASA</span></code></a></p>
+<p>relative polar surface area descriptor.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/CPSA.html#RPSA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.CPSA.RPSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.CPSA.RPSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.CPSA.RPSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.CPSA.RPSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.CPSA.RPSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.CPSA.RPSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.CPSA module</a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA"><code class="docutils literal notranslate"><span class="pre">PNSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.since"><code class="docutils literal notranslate"><span class="pre">PNSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.description"><code class="docutils literal notranslate"><span class="pre">PNSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.config"><code class="docutils literal notranslate"><span class="pre">PNSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">PNSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.from_json"><code class="docutils literal notranslate"><span class="pre">PNSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">PNSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">PNSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.kekulize"><code class="docutils literal notranslate"><span class="pre">PNSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">PNSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.require_3D"><code class="docutils literal notranslate"><span class="pre">PNSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.require_connected"><code class="docutils literal notranslate"><span class="pre">PNSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.rtype"><code class="docutils literal notranslate"><span class="pre">PNSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.to_json"><code class="docutils literal notranslate"><span class="pre">PNSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PNSA.versions"><code class="docutils literal notranslate"><span class="pre">PNSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA"><code class="docutils literal notranslate"><span class="pre">PPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.since"><code class="docutils literal notranslate"><span class="pre">PPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.description"><code class="docutils literal notranslate"><span class="pre">PPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.config"><code class="docutils literal notranslate"><span class="pre">PPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">PPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.from_json"><code class="docutils literal notranslate"><span class="pre">PPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">PPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">PPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">PPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">PPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">PPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">PPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.rtype"><code class="docutils literal notranslate"><span class="pre">PPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.to_json"><code class="docutils literal notranslate"><span class="pre">PPSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.PPSA.versions"><code class="docutils literal notranslate"><span class="pre">PPSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA"><code class="docutils literal notranslate"><span class="pre">DPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.since"><code class="docutils literal notranslate"><span class="pre">DPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.description"><code class="docutils literal notranslate"><span class="pre">DPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.config"><code class="docutils literal notranslate"><span class="pre">DPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">DPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.from_json"><code class="docutils literal notranslate"><span class="pre">DPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">DPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">DPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">DPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">DPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">DPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">DPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.rtype"><code class="docutils literal notranslate"><span class="pre">DPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.to_json"><code class="docutils literal notranslate"><span class="pre">DPSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.DPSA.versions"><code class="docutils literal notranslate"><span class="pre">DPSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA"><code class="docutils literal notranslate"><span class="pre">FNSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.since"><code class="docutils literal notranslate"><span class="pre">FNSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.description"><code class="docutils literal notranslate"><span class="pre">FNSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.config"><code class="docutils literal notranslate"><span class="pre">FNSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">FNSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.from_json"><code class="docutils literal notranslate"><span class="pre">FNSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">FNSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">FNSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.kekulize"><code class="docutils literal notranslate"><span class="pre">FNSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">FNSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.require_3D"><code class="docutils literal notranslate"><span class="pre">FNSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.require_connected"><code class="docutils literal notranslate"><span class="pre">FNSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.rtype"><code class="docutils literal notranslate"><span class="pre">FNSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.to_json"><code class="docutils literal notranslate"><span class="pre">FNSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FNSA.versions"><code class="docutils literal notranslate"><span class="pre">FNSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA"><code class="docutils literal notranslate"><span class="pre">FPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.since"><code class="docutils literal notranslate"><span class="pre">FPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.description"><code class="docutils literal notranslate"><span class="pre">FPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.config"><code class="docutils literal notranslate"><span class="pre">FPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">FPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.from_json"><code class="docutils literal notranslate"><span class="pre">FPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">FPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">FPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">FPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">FPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">FPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">FPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.rtype"><code class="docutils literal notranslate"><span class="pre">FPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.to_json"><code class="docutils literal notranslate"><span class="pre">FPSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.FPSA.versions"><code class="docutils literal notranslate"><span class="pre">FPSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA"><code class="docutils literal notranslate"><span class="pre">WNSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.since"><code class="docutils literal notranslate"><span class="pre">WNSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.description"><code class="docutils literal notranslate"><span class="pre">WNSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.config"><code class="docutils literal notranslate"><span class="pre">WNSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">WNSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.from_json"><code class="docutils literal notranslate"><span class="pre">WNSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">WNSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">WNSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.kekulize"><code class="docutils literal notranslate"><span class="pre">WNSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">WNSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.require_3D"><code class="docutils literal notranslate"><span class="pre">WNSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.require_connected"><code class="docutils literal notranslate"><span class="pre">WNSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.rtype"><code class="docutils literal notranslate"><span class="pre">WNSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.to_json"><code class="docutils literal notranslate"><span class="pre">WNSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WNSA.versions"><code class="docutils literal notranslate"><span class="pre">WNSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA"><code class="docutils literal notranslate"><span class="pre">WPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.since"><code class="docutils literal notranslate"><span class="pre">WPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.description"><code class="docutils literal notranslate"><span class="pre">WPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.config"><code class="docutils literal notranslate"><span class="pre">WPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">WPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.from_json"><code class="docutils literal notranslate"><span class="pre">WPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">WPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">WPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">WPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">WPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">WPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">WPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.rtype"><code class="docutils literal notranslate"><span class="pre">WPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.to_json"><code class="docutils literal notranslate"><span class="pre">WPSA.to_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.WPSA.versions"><code class="docutils literal notranslate"><span class="pre">WPSA.versions</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG"><code class="docutils literal notranslate"><span class="pre">RNCG</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.since"><code class="docutils literal notranslate"><span class="pre">RNCG.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.require_3D"><code class="docutils literal notranslate"><span class="pre">RNCG.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.description"><code class="docutils literal notranslate"><span class="pre">RNCG.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.config"><code class="docutils literal notranslate"><span class="pre">RNCG.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RNCG.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.from_json"><code class="docutils literal notranslate"><span class="pre">RNCG.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RNCG.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RNCG.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.kekulize"><code class="docutils literal notranslate"><span class="pre">RNCG.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.parameter_names"><code class="docutils literal notranslate"><span class="pre">RNCG.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.require_connected"><code class="docutils literal notranslate"><span class="pre">RNCG.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.rtype"><code class="docutils literal notranslate"><span class="pre">RNCG.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCG.to_json"><code class="docutils literal notranslate"><span class="pre">RNCG.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG"><code class="docutils literal notranslate"><span class="pre">RPCG</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.since"><code class="docutils literal notranslate"><span class="pre">RPCG.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.description"><code class="docutils literal notranslate"><span class="pre">RPCG.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.config"><code class="docutils literal notranslate"><span class="pre">RPCG.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RPCG.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.from_json"><code class="docutils literal notranslate"><span class="pre">RPCG.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RPCG.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RPCG.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.kekulize"><code class="docutils literal notranslate"><span class="pre">RPCG.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.parameter_names"><code class="docutils literal notranslate"><span class="pre">RPCG.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.require_3D"><code class="docutils literal notranslate"><span class="pre">RPCG.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.require_connected"><code class="docutils literal notranslate"><span class="pre">RPCG.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.rtype"><code class="docutils literal notranslate"><span class="pre">RPCG.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCG.to_json"><code class="docutils literal notranslate"><span class="pre">RPCG.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS"><code class="docutils literal notranslate"><span class="pre">RNCS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.since"><code class="docutils literal notranslate"><span class="pre">RNCS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.description"><code class="docutils literal notranslate"><span class="pre">RNCS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.rtype"><code class="docutils literal notranslate"><span class="pre">RNCS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.config"><code class="docutils literal notranslate"><span class="pre">RNCS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RNCS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.from_json"><code class="docutils literal notranslate"><span class="pre">RNCS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RNCS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RNCS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.kekulize"><code class="docutils literal notranslate"><span class="pre">RNCS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.parameter_names"><code class="docutils literal notranslate"><span class="pre">RNCS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.require_3D"><code class="docutils literal notranslate"><span class="pre">RNCS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.require_connected"><code class="docutils literal notranslate"><span class="pre">RNCS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RNCS.to_json"><code class="docutils literal notranslate"><span class="pre">RNCS.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS"><code class="docutils literal notranslate"><span class="pre">RPCS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.since"><code class="docutils literal notranslate"><span class="pre">RPCS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.description"><code class="docutils literal notranslate"><span class="pre">RPCS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.config"><code class="docutils literal notranslate"><span class="pre">RPCS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RPCS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.from_json"><code class="docutils literal notranslate"><span class="pre">RPCS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RPCS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RPCS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.kekulize"><code class="docutils literal notranslate"><span class="pre">RPCS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.parameter_names"><code class="docutils literal notranslate"><span class="pre">RPCS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.require_3D"><code class="docutils literal notranslate"><span class="pre">RPCS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.require_connected"><code class="docutils literal notranslate"><span class="pre">RPCS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.rtype"><code class="docutils literal notranslate"><span class="pre">RPCS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPCS.to_json"><code class="docutils literal notranslate"><span class="pre">RPCS.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA"><code class="docutils literal notranslate"><span class="pre">TASA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.since"><code class="docutils literal notranslate"><span class="pre">TASA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.description"><code class="docutils literal notranslate"><span class="pre">TASA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.config"><code class="docutils literal notranslate"><span class="pre">TASA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">TASA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.from_json"><code class="docutils literal notranslate"><span class="pre">TASA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">TASA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">TASA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.kekulize"><code class="docutils literal notranslate"><span class="pre">TASA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.parameter_names"><code class="docutils literal notranslate"><span class="pre">TASA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.require_3D"><code class="docutils literal notranslate"><span class="pre">TASA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.require_connected"><code class="docutils literal notranslate"><span class="pre">TASA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.rtype"><code class="docutils literal notranslate"><span class="pre">TASA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TASA.to_json"><code class="docutils literal notranslate"><span class="pre">TASA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA"><code class="docutils literal notranslate"><span class="pre">TPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.since"><code class="docutils literal notranslate"><span class="pre">TPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.description"><code class="docutils literal notranslate"><span class="pre">TPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.config"><code class="docutils literal notranslate"><span class="pre">TPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">TPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.from_json"><code class="docutils literal notranslate"><span class="pre">TPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">TPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">TPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">TPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">TPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">TPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">TPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.rtype"><code class="docutils literal notranslate"><span class="pre">TPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.TPSA.to_json"><code class="docutils literal notranslate"><span class="pre">TPSA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA"><code class="docutils literal notranslate"><span class="pre">RASA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.since"><code class="docutils literal notranslate"><span class="pre">RASA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.description"><code class="docutils literal notranslate"><span class="pre">RASA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.config"><code class="docutils literal notranslate"><span class="pre">RASA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RASA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.from_json"><code class="docutils literal notranslate"><span class="pre">RASA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RASA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RASA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.kekulize"><code class="docutils literal notranslate"><span class="pre">RASA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.parameter_names"><code class="docutils literal notranslate"><span class="pre">RASA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.require_3D"><code class="docutils literal notranslate"><span class="pre">RASA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.require_connected"><code class="docutils literal notranslate"><span class="pre">RASA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.rtype"><code class="docutils literal notranslate"><span class="pre">RASA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RASA.to_json"><code class="docutils literal notranslate"><span class="pre">RASA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA"><code class="docutils literal notranslate"><span class="pre">RPSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.description"><code class="docutils literal notranslate"><span class="pre">RPSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.since"><code class="docutils literal notranslate"><span class="pre">RPSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.config"><code class="docutils literal notranslate"><span class="pre">RPSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">RPSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.from_json"><code class="docutils literal notranslate"><span class="pre">RPSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">RPSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">RPSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.kekulize"><code class="docutils literal notranslate"><span class="pre">RPSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">RPSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.require_3D"><code class="docutils literal notranslate"><span class="pre">RPSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.require_connected"><code class="docutils literal notranslate"><span class="pre">RPSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.rtype"><code class="docutils literal notranslate"><span class="pre">RPSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.CPSA.RPSA.to_json"><code class="docutils literal notranslate"><span class="pre">RPSA.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.BondCount.html"
+                          title="previous chapter">mordred.BondCount module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.CarbonTypes.html"
+                          title="next chapter">mordred.CarbonTypes module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.CPSA.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.CarbonTypes.html" title="mordred.CarbonTypes module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.BondCount.html" title="mordred.BondCount module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.CPSA module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

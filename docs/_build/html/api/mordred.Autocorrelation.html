@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.Autocorrelation module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.BCUT module" href="mordred.BCUT.html" />
+    <link rel="prev" title="mordred.AtomCount module" href="mordred.AtomCount.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BCUT.html" title="mordred.BCUT module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.AtomCount.html" title="mordred.AtomCount module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.Autocorrelation module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.Autocorrelation">
+<span id="mordred-autocorrelation-module"></span><h1>mordred.Autocorrelation module<a class="headerlink" href="#module-mordred.Autocorrelation" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">ATS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.ATS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AutocorrelationBase</span></code></p>
+<p>Autocorrelation of Topological Structure descriptor.</p>
+<p>a.k.a. Moreau-Broto autocorrelation descriptor</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}{\rm ATS}_0 = \sum^{A}_{i=1} {\boldsymbol w}_i^2\\{\rm ATS}_k = \frac{1}{2}
+    \left(
+        {\boldsymbol w}^{\rm T} \cdot
+        {}^k{\boldsymbol B} \cdot
+        {\boldsymbol w}
+    \right)\\\begin{split}{}^k{\boldsymbol B} =
+    \begin{cases}
+        1 &amp; (d_{ij} =    k) \\
+        0 &amp; (d_{ij} \neq k)
+    \end{cases}\end{split}\end{aligned}\end{align} \]</div>
+<p>where
+<span class="math notranslate nohighlight">\({\boldsymbol w}\)</span> is atomic property vector,
+<span class="math notranslate nohighlight">\(d_{ij}\)</span> is graph distance(smallest number of bonds between atom i and j).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – order(<span class="math notranslate nohighlight">\(k\)</span>)</p></li>
+<li><p><strong>property</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>function</em>) – <a class="reference internal" href="../atomic_prop.html#atomic-properties"><span class="std std-ref">atomic properties</span></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when any properties are NaN</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.ATS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.ATS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">AATS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.AATS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+<p>averaged ATS descriptor.</p>
+<div class="math notranslate nohighlight">
+\[{\rm AATS}_k = \frac{{\rm ATS}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math notranslate nohighlight">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>NaN when</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta_k = 0\)</span></p></li>
+<li><p>some properties are NaN</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.AATS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.AATS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">ATSC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#ATSC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.ATSC" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AutocorrelationBase</span></code></p>
+<p>centered ATS descriptor.</p>
+<p>ATS with <span class="math notranslate nohighlight">\({\boldsymbol w}_{\rm c}\)</span> property</p>
+<div class="math notranslate nohighlight">
+\[{\boldsymbol w}_{\rm c} = {\boldsymbol w} - \bar{\boldsymbol w}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when any properties are NaN</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.ATSC.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.ATSC.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.ATSC.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">AATSC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#AATSC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.AATSC" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.ATSC" title="mordred.Autocorrelation.ATSC"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATSC</span></code></a></p>
+<p>averaged ATSC descriptor.</p>
+<div class="math notranslate nohighlight">
+\[{\rm AATSC}_k = \frac{{\rm ATSC}_k}{\Delta_k}\]</div>
+<p>where
+<span class="math notranslate nohighlight">\(\Delta_k\)</span> is number of vertex pairs at order equal to <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>NaN when</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta_k = 0\)</span></p></li>
+<li><p>any properties are NaN</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.AATSC.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.AATSC.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.AATSC.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">MATS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#MATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.MATS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AutocorrelationBase</span></code></p>
+<p>Moran coefficient descriptor.</p>
+<div class="math notranslate nohighlight">
+\[{\rm MATS}_k = \frac{
+    {\rm AATSC}_k
+    }{
+    \frac{1}{A} \cdot \sum {\boldsymbol w}_{\rm c}^2
+    }\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>NaN when</p>
+<ul class="simple">
+<li><p>some properties are NaN</p></li>
+<li><p>denominator = 0</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.MATS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.MATS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.MATS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.MATS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.MATS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.Autocorrelation.</span></span><span class="sig-name descname"><span class="pre">GATS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/Autocorrelation.html#GATS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.Autocorrelation.GATS" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.Autocorrelation.MATS" title="mordred.Autocorrelation.MATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">MATS</span></code></a></p>
+<p>Geary coefficient descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p>see <a class="reference internal" href="#mordred.Autocorrelation.ATS" title="mordred.Autocorrelation.ATS"><code class="xref py py-class docutils literal notranslate"><span class="pre">ATS</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>NaN when</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta_k = 0\)</span></p></li>
+<li><p>any properties are NaN</p></li>
+<li><p>denominator = 0</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.Autocorrelation.GATS.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'prop')</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.Autocorrelation.GATS.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.Autocorrelation.GATS.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.Autocorrelation.GATS.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.Autocorrelation.GATS.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.Autocorrelation module</a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS"><code class="docutils literal notranslate"><span class="pre">ATS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.since"><code class="docutils literal notranslate"><span class="pre">ATS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.config"><code class="docutils literal notranslate"><span class="pre">ATS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.description"><code class="docutils literal notranslate"><span class="pre">ATS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">ATS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.from_json"><code class="docutils literal notranslate"><span class="pre">ATS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">ATS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">ATS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.kekulize"><code class="docutils literal notranslate"><span class="pre">ATS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.parameter_names"><code class="docutils literal notranslate"><span class="pre">ATS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.require_3D"><code class="docutils literal notranslate"><span class="pre">ATS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.require_connected"><code class="docutils literal notranslate"><span class="pre">ATS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.rtype"><code class="docutils literal notranslate"><span class="pre">ATS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATS.to_json"><code class="docutils literal notranslate"><span class="pre">ATS.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS"><code class="docutils literal notranslate"><span class="pre">AATS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.since"><code class="docutils literal notranslate"><span class="pre">AATS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.config"><code class="docutils literal notranslate"><span class="pre">AATS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.description"><code class="docutils literal notranslate"><span class="pre">AATS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">AATS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.from_json"><code class="docutils literal notranslate"><span class="pre">AATS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">AATS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">AATS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.kekulize"><code class="docutils literal notranslate"><span class="pre">AATS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.parameter_names"><code class="docutils literal notranslate"><span class="pre">AATS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.require_3D"><code class="docutils literal notranslate"><span class="pre">AATS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.require_connected"><code class="docutils literal notranslate"><span class="pre">AATS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.rtype"><code class="docutils literal notranslate"><span class="pre">AATS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATS.to_json"><code class="docutils literal notranslate"><span class="pre">AATS.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC"><code class="docutils literal notranslate"><span class="pre">ATSC</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.since"><code class="docutils literal notranslate"><span class="pre">ATSC.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.config"><code class="docutils literal notranslate"><span class="pre">ATSC.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.description"><code class="docutils literal notranslate"><span class="pre">ATSC.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">ATSC.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.from_json"><code class="docutils literal notranslate"><span class="pre">ATSC.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">ATSC.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">ATSC.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.kekulize"><code class="docutils literal notranslate"><span class="pre">ATSC.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.parameter_names"><code class="docutils literal notranslate"><span class="pre">ATSC.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.require_3D"><code class="docutils literal notranslate"><span class="pre">ATSC.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.require_connected"><code class="docutils literal notranslate"><span class="pre">ATSC.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.rtype"><code class="docutils literal notranslate"><span class="pre">ATSC.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.ATSC.to_json"><code class="docutils literal notranslate"><span class="pre">ATSC.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC"><code class="docutils literal notranslate"><span class="pre">AATSC</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.since"><code class="docutils literal notranslate"><span class="pre">AATSC.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.config"><code class="docutils literal notranslate"><span class="pre">AATSC.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.description"><code class="docutils literal notranslate"><span class="pre">AATSC.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">AATSC.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.from_json"><code class="docutils literal notranslate"><span class="pre">AATSC.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">AATSC.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">AATSC.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.kekulize"><code class="docutils literal notranslate"><span class="pre">AATSC.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.parameter_names"><code class="docutils literal notranslate"><span class="pre">AATSC.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.require_3D"><code class="docutils literal notranslate"><span class="pre">AATSC.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.require_connected"><code class="docutils literal notranslate"><span class="pre">AATSC.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.rtype"><code class="docutils literal notranslate"><span class="pre">AATSC.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.AATSC.to_json"><code class="docutils literal notranslate"><span class="pre">AATSC.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS"><code class="docutils literal notranslate"><span class="pre">MATS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.since"><code class="docutils literal notranslate"><span class="pre">MATS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.config"><code class="docutils literal notranslate"><span class="pre">MATS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.description"><code class="docutils literal notranslate"><span class="pre">MATS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">MATS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.from_json"><code class="docutils literal notranslate"><span class="pre">MATS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">MATS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">MATS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.kekulize"><code class="docutils literal notranslate"><span class="pre">MATS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.parameter_names"><code class="docutils literal notranslate"><span class="pre">MATS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.require_3D"><code class="docutils literal notranslate"><span class="pre">MATS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.require_connected"><code class="docutils literal notranslate"><span class="pre">MATS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.rtype"><code class="docutils literal notranslate"><span class="pre">MATS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.MATS.to_json"><code class="docutils literal notranslate"><span class="pre">MATS.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS"><code class="docutils literal notranslate"><span class="pre">GATS</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.since"><code class="docutils literal notranslate"><span class="pre">GATS.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.config"><code class="docutils literal notranslate"><span class="pre">GATS.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.description"><code class="docutils literal notranslate"><span class="pre">GATS.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">GATS.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.from_json"><code class="docutils literal notranslate"><span class="pre">GATS.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">GATS.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">GATS.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.kekulize"><code class="docutils literal notranslate"><span class="pre">GATS.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.parameter_names"><code class="docutils literal notranslate"><span class="pre">GATS.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.require_3D"><code class="docutils literal notranslate"><span class="pre">GATS.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.require_connected"><code class="docutils literal notranslate"><span class="pre">GATS.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.rtype"><code class="docutils literal notranslate"><span class="pre">GATS.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.Autocorrelation.GATS.to_json"><code class="docutils literal notranslate"><span class="pre">GATS.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.AtomCount.html"
+                          title="previous chapter">mordred.AtomCount module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.BCUT.html"
+                          title="next chapter">mordred.BCUT module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.Autocorrelation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.BCUT.html" title="mordred.BCUT module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.AtomCount.html" title="mordred.AtomCount module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.Autocorrelation module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

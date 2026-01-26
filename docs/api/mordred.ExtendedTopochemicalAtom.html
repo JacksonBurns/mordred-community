@@ -1,0 +1,1650 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.ExtendedTopochemicalAtom module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.FragmentComplexity module" href="mordred.FragmentComplexity.html" />
+    <link rel="prev" title="mordred.EccentricConnectivityIndex module" href="mordred.EccentricConnectivityIndex.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.FragmentComplexity.html" title="mordred.FragmentComplexity module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.ExtendedTopochemicalAtom module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.ExtendedTopochemicalAtom">
+<span id="mordred-extendedtopochemicalatom-module"></span><h1>mordred.ExtendedTopochemicalAtom module<a class="headerlink" href="#module-mordred.ExtendedTopochemicalAtom" title="Link to this heading">¶</a></h1>
+<p>Extended Topochemical Atom(ETA) descriptor.</p>
+<dl class="simple">
+<dt>References</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://dx.doi.org/10.1021/ci0342066">doi:10.1021/ci0342066</a></p></li>
+<li><p><a class="reference external" href="https://dx.doi.org/10.1016/j.jhazmat.2013.03.023">doi:10.1016/j.jhazmat.2013.03.023</a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaCoreCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaCoreCount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA core count descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\alpha = \sum_{i = 1}^A \frac{Z_i - Z_i^v}{Z_i^v} \cdot \frac{1}{PN_i - 1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z_i\)</span> and <span class="math notranslate nohighlight">\(Z_i^v\)</span> are number of total and valence electons,
+<span class="math notranslate nohighlight">\(PN\)</span> is periodic number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged by number of heavy count</p></li>
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use reference alkane
+(same graph structure, but all atoms are carbon and all bonds are single bond)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>reference and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaCoreCount.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('averaged',</span> <span class="pre">'reference')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCoreCount.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaShapeIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'p'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaShapeIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA shape index descriptor.</p>
+<div class="math notranslate nohighlight">
+\[{\rm shape}_t = \frac{\alpha_t}{\alpha}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha_t\)</span> is p(alpha value only atoms which bond to 1 heavy atom),
+y(3), or x(4).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of shape_types</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaShapeIndex.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.shape_types">
+<span class="sig-name descname"><span class="pre">shape_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('p',</span> <span class="pre">'y',</span> <span class="pre">'x')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.shape_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaShapeIndex.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaVEMCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaVEMCount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA VEM(valence electron mobile) count descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\beta^{\rm s} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm s}_i\\\beta^{\rm s}_i = \sum^A_{j = 1} x_{ij}\sigma_{ij}\\\begin{split}x_{ij} = \begin{cases}
+    0.5  &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right) \\
+    0.75 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right)
+\end{cases}\end{split}\\\epsilon_i = - \alpha_i + 0.3 Z^{\rm v}\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{ij}\)</span> is sigma bond count between i and j.</p>
+<div class="math notranslate nohighlight">
+\[\beta^{\rm ns\delta} = \sum^A_{i = 1} \beta^{\rm ns\delta}_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta^{\rm ns\delta}_i\)</span> is
+0.5 if i-th atom is making resonance with an aromatic ring.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\beta^{\rm ns} = \frac{1}{2} \sum^A_{i=1} \beta^{\rm ns}_i\\\beta^{\rm ns}_i = \sum^A_{j = 1} y_{ij}\pi_{ij} + \beta^{\rm ns\delta}_i\\\begin{split}y_{ij} = \begin{cases}
+    2.0 &amp; \left( {\rm ij\ is\ aromatic\ bond} \right) \\
+    1.5 &amp; \left( \left| \epsilon_i - \epsilon_j \right| &gt; 0.3 \right) \\
+    1.0 &amp; \left( \left| \epsilon_i - \epsilon_j \right| \leq 0.3 \right)
+\end{cases}\end{split}\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi_{ij}\)</span> is pi bond count between i and j.</p>
+<div class="math notranslate nohighlight">
+\[\beta = \beta^{\rm s} + \beta^{\rm ns}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of beta_types</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged by heavy atom count</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaVEMCount.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.beta_types">
+<span class="sig-name descname"><span class="pre">beta_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('',</span> <span class="pre">'s',</span> <span class="pre">'ns',</span> <span class="pre">'ns_d')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.beta_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',</span> <span class="pre">'averaged')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaVEMCount.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaCompositeIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaCompositeIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA composite index descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\eta = \sum_{i &lt; j} \left( \frac{\gamma_i \gamma_j}{r_{ij}^2} \right)^{0.5}\\\gamma_i = \frac{\alpha_i}{\beta_i}\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{ij}\)</span> is graph distance.</p>
+<div class="math notranslate nohighlight">
+\[\eta^{\rm local} = \sum_{i &lt; j, r_{ij} = 1} \left( \gamma_i \gamma_j \right)^{0.5}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use reference alkane.</p></li>
+<li><p><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use <span class="math notranslate nohighlight">\(\eta^{\rm local}\)</span></p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>reference and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaCompositeIndex.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('reference',</span> <span class="pre">'local',</span> <span class="pre">'averaged')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaFunctionalityIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaFunctionalityIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA functionality index descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\eta^{\rm F} = \eta^{\rm R} - \eta\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta^{\rm R}\)</span> is eta value for reference alkane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>local</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use local eta</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaFunctionalityIndex.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('local',</span> <span class="pre">'averaged')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaBranchingIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaBranchingIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA branching index descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\eta^{\rm B} = \eta^{\rm local,N} - \eta^{local,R} + 0.086 N^{\rm R}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta^{\rm local,N}\)</span> is <span class="math notranslate nohighlight">\(\eta^{\rm local}\)</span> for normal alkane.
+<span class="math notranslate nohighlight">\(N^{\rm R}\)</span> is ring count.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ring</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use ring count or not</p></li>
+<li><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when A &lt; 2</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaBranchingIndex.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ring',</span> <span class="pre">'averaged')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaDeltaAlpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'A'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaAlpha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA delta alpha descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\Delta\alpha_{\rm A} = \max\left(\frac{\alpha - \alpha^{\rm R}}{A}, 0\right)\\\Delta\alpha_{\rm B} = \max\left(\frac{\alpha^{\rm R} - \alpha}{A}, 0\right)\end{aligned}\end{align} \]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of delta_types</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaAlpha.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.delta_types">
+<span class="sig-name descname"><span class="pre">delta_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('A',</span> <span class="pre">'B')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.delta_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaEpsilon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaEpsilon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA epsilon descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\epsilon^i = \frac{\epsilon^i}{N^i} (i \leq 4)
+\epsilon^5 = \frac{\epsilon^2 + \epsilon^{\rm XH}}{N^2 + N^{\rm XH}}\]</div>
+<dl class="simple">
+<dt>types(i)</dt><dd><dl class="simple">
+<dt>1</dt><dd><p>all atoms</p>
+</dd>
+<dt>2</dt><dd><p>heavy atoms</p>
+</dd>
+<dt>3</dt><dd><p>all atoms of reference alkane</p>
+</dd>
+<dt>4</dt><dd><p>all atoms of saturated carbon skeleton(reduce C-C bonds)</p>
+</dd>
+<dt>XH</dt><dd><p>hydrogens bond to hetero atoms</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of epsilon_types</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>type = 3 and valence of any atoms &gt; 4</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaEpsilon.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.explicit_hydrogens">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd><p>bool(x) -&gt; bool</p>
+<p>Returns True when the argument x is true, False otherwise.
+The builtins True and False are the only two instances of the class bool.
+The class bool is a subclass of the class int, and cannot be subclassed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types">
+<span class="sig-name descname"><span class="pre">epsilon_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaEpsilon.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaDeltaEpsilon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'A'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaEpsilon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA delta epsilon descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\Delta \epsilon^{\rm A} = \epsilon^1 - \epsilon^3\\\Delta \epsilon^{\rm B} = \epsilon^1 - \epsilon^4\\\Delta \epsilon^{\rm C} = \epsilon^3 - \epsilon^4\\\Delta \epsilon^{\rm D} = \epsilon^2 - \epsilon^5\end{aligned}\end{align} \]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of delta_epsilon_types</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaEpsilon.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.delta_epsilon_types">
+<span class="sig-name descname"><span class="pre">delta_epsilon_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('A',</span> <span class="pre">'B',</span> <span class="pre">'C',</span> <span class="pre">'D')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.delta_epsilon_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaDeltaBeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">averaged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaBeta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA delta beta descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\Delta\beta = \beta^{\rm ns} - \beta^{\rm s}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>averaged</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – averaged</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaBeta.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('averaged',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaPsi</span></span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaPsi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA psi descriptor.</p>
+<div class="math notranslate nohighlight">
+\[\psi_1 = \frac{\alpha}{A \cdot \epsilon^2}\]</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaPsi.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaPsi.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ExtendedTopochemicalAtom.</span></span><span class="sig-name descname"><span class="pre">EtaDeltaPsi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'A'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaPsi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EtaBase</span></code></p>
+<p>ETA delta psi descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\Delta\psi_{\rm A} = \max\left(0.714 - \psi_1, 0\right)\\\Delta\psi_{\rm B} = \max\left(\psi_1 - 0.714, 0\right)\end{aligned}\end{align} \]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of delta_psi_types</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ExtendedTopochemicalAtom.html#EtaDeltaPsi.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.delta_psi_types">
+<span class="sig-name descname"><span class="pre">delta_psi_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('A',</span> <span class="pre">'B')</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.delta_psi_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',)</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.ExtendedTopochemicalAtom module</a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.since"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.description"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.config"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.from_json"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.rtype"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCoreCount.to_json"><code class="docutils literal notranslate"><span class="pre">EtaCoreCount.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.since"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.description"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.shape_types"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.shape_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.config"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.from_json"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.rtype"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaShapeIndex.to_json"><code class="docutils literal notranslate"><span class="pre">EtaShapeIndex.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.since"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.description"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.beta_types"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.beta_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.config"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.from_json"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.rtype"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaVEMCount.to_json"><code class="docutils literal notranslate"><span class="pre">EtaVEMCount.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.since"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.description"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.config"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.from_json"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.rtype"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaCompositeIndex.to_json"><code class="docutils literal notranslate"><span class="pre">EtaCompositeIndex.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.since"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.description"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.config"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.from_json"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.rtype"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaFunctionalityIndex.to_json"><code class="docutils literal notranslate"><span class="pre">EtaFunctionalityIndex.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.since"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.description"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.config"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.from_json"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.rtype"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaBranchingIndex.to_json"><code class="docutils literal notranslate"><span class="pre">EtaBranchingIndex.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.since"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.description"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.delta_types"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.delta_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.config"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.from_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.rtype"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaAlpha.to_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaAlpha.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.since"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.description"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.epsilon_types"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.epsilon_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.config"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.from_json"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.rtype"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaEpsilon.to_json"><code class="docutils literal notranslate"><span class="pre">EtaEpsilon.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.since"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.description"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.delta_epsilon_types"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.delta_epsilon_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.config"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.from_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.rtype"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaEpsilon.to_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaEpsilon.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.since"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.description"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.config"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.from_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.rtype"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaBeta.to_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaBeta.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi"><code class="docutils literal notranslate"><span class="pre">EtaPsi</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.since"><code class="docutils literal notranslate"><span class="pre">EtaPsi.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.description"><code class="docutils literal notranslate"><span class="pre">EtaPsi.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.config"><code class="docutils literal notranslate"><span class="pre">EtaPsi.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaPsi.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.from_json"><code class="docutils literal notranslate"><span class="pre">EtaPsi.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaPsi.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaPsi.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaPsi.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaPsi.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaPsi.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaPsi.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.rtype"><code class="docutils literal notranslate"><span class="pre">EtaPsi.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaPsi.to_json"><code class="docutils literal notranslate"><span class="pre">EtaPsi.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.since"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.description"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.delta_psi_types"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.delta_psi_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.config"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.from_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.kekulize"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.parameter_names"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_3D"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.require_connected"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.rtype"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ExtendedTopochemicalAtom.EtaDeltaPsi.to_json"><code class="docutils literal notranslate"><span class="pre">EtaDeltaPsi.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.EccentricConnectivityIndex.html"
+                          title="previous chapter">mordred.EccentricConnectivityIndex module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.FragmentComplexity.html"
+                          title="next chapter">mordred.FragmentComplexity module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.ExtendedTopochemicalAtom.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.FragmentComplexity.html" title="mordred.FragmentComplexity module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.ExtendedTopochemicalAtom module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

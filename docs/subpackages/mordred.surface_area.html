@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.surface_area &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Submodules" href="../api/modules.html" />
+    <link rel="prev" title="mordred.descriptors" href="mordred.descriptors.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api/modules.html" title="Submodules"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.descriptors.html" title="mordred.descriptors"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="subpackages.html" accesskey="U">Subpackages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.surface_area</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.surface_area">
+<span id="mordred-surface-area"></span><h1>mordred.surface_area<a class="headerlink" href="#module-mordred.surface_area" title="Link to this heading">¶</a></h1>
+<p>surface area subpackage.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>mordred.surface_area<span class="w"> </span>-h
+<span class="go">usage: python -m mordred.surface_area [-h] [-s R] [-l L] FILE</span>
+
+<span class="go">positional arguments:</span>
+<span class="go">  FILE                  input sdf/mol file</span>
+
+<span class="go">optional arguments:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+<span class="go">  -s R, --solvent-radius R</span>
+<span class="go">                        solvent radius (default: 1.4)</span>
+<span class="go">  -l L, --mesh-level L  mesh level (default: 5)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.surface_area.SurfaceArea">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.surface_area.</span></span><span class="sig-name descname"><span class="pre">SurfaceArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">radiuses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyzs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>calculate solvent accessible surface area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radiuses</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>,</em><em>)</em><em>)</em>) – atomic radius + solvent radius vector</p></li>
+<li><p><strong>xyzs</strong> (<em>np.ndarray</em><em>(</em><em>dtype=float</em><em>, </em><em>shape=</em><em>(</em><em>N</em><em>, </em><em>3</em><em>)</em><em>)</em>) – atomic position matrix</p></li>
+<li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – <p>mesh level. subdivide icosahedron n-1 times.</p>
+<div class="math notranslate nohighlight">
+\[N_{\rm points} = 5 \times 4^{level} - 8\]</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.surface_area.SurfaceArea.atomic_sa">
+<span class="sig-name descname"><span class="pre">atomic_sa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.atomic_sa"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.atomic_sa" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate atomic surface area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – atom index</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.surface_area.SurfaceArea.from_mol">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_mol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conformer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_mol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_mol" title="Link to this definition">¶</a></dt>
+<dd><p>Construct SurfaceArea from rdkit Mol type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mol</strong> (<em>rdkit.Chem.Mol</em>) – input molecule</p></li>
+<li><p><strong>conformer</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – conformer id</p></li>
+<li><p><strong>solvent_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – solvent radius</p></li>
+<li><p><strong>level</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – mesh level</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mordred.surface_area.SurfaceArea" title="mordred.surface_area.SurfaceArea">SurfaceArea</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.surface_area.SurfaceArea.from_pdb">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.from_pdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.from_pdb" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.surface_area.SurfaceArea.surface_area">
+<span class="sig-name descname"><span class="pre">surface_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/surface_area/_sasa.html#SurfaceArea.surface_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.surface_area.SurfaceArea.surface_area" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate all atomic surface area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.surface_area</a><ul>
+<li><a class="reference internal" href="#mordred.surface_area.SurfaceArea"><code class="docutils literal notranslate"><span class="pre">SurfaceArea</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.surface_area.SurfaceArea.atomic_sa"><code class="docutils literal notranslate"><span class="pre">SurfaceArea.atomic_sa()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.surface_area.SurfaceArea.from_mol"><code class="docutils literal notranslate"><span class="pre">SurfaceArea.from_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.surface_area.SurfaceArea.from_pdb"><code class="docutils literal notranslate"><span class="pre">SurfaceArea.from_pdb()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.surface_area.SurfaceArea.surface_area"><code class="docutils literal notranslate"><span class="pre">SurfaceArea.surface_area()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.descriptors.html"
+                          title="previous chapter">mordred.descriptors</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../api/modules.html"
+                          title="next chapter">Submodules</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/subpackages/mordred.surface_area.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api/modules.html" title="Submodules"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.descriptors.html" title="mordred.descriptors"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="subpackages.html" >Subpackages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.surface_area</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

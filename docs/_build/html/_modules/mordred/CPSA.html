@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mordred.CPSA &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.CPSA</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for mordred.CPSA</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;charged partial surface area descriptor.</span>
+
+<span class="sd">References</span>
+<span class="sd">    * :doi:`10.1021/ac00220a013`</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">._base</span><span class="w"> </span><span class="kn">import</span> <span class="n">Descriptor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._util</span><span class="w"> </span><span class="kn">import</span> <span class="n">atoms_to_numpy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.surface_area</span><span class="w"> </span><span class="kn">import</span> <span class="n">SurfaceArea</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._atomic_property</span><span class="w"> </span><span class="kn">import</span> <span class="n">AtomicProperty</span><span class="p">,</span> <span class="n">vdw_radii</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;PNSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PPSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DPSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FNSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FPSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WNSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WPSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RNCG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RPCG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RNCS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RPCS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TASA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TPSA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RASA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RPSA&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CPSABase</span><span class="p">(</span><span class="n">Descriptor</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="bp">cls</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">VersionCPSABase</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;_version&quot;</span><span class="p">,)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">preset</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">versions</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">,)</span>
+
+    <span class="n">versions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">=</span> <span class="n">version</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AtomicSurfaceArea</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="s2">&quot;_solvent_radius&quot;</span><span class="p">,</span> <span class="s2">&quot;_level&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solvent_radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_level</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solvent_radius</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_solvent_radius</span> <span class="o">=</span> <span class="n">solvent_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_level</span> <span class="o">=</span> <span class="n">level</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rs</span> <span class="o">=</span> <span class="n">atoms_to_numpy</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">vdw_radii</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">GetAtomicNum</span><span class="p">()]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_solvent_radius</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span>
+        <span class="p">)</span>
+
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+            <span class="n">sa</span> <span class="o">=</span> <span class="n">SurfaceArea</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">coord</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_level</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">surface_area</span><span class="p">())</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">TotalSurfaceArea</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ASA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">()}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AtomicCharge</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">AtomicProperty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">explicit_hydrogens</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="PNSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PNSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PNSA</span><span class="p">(</span><span class="n">VersionCPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;partial negative surface area descriptor.</span>
+
+<span class="sd">    .. math::</span>
+
+<span class="sd">        {\rm PNSA}_1 = \sum_{a-} {\rm SA}_a^-</span>
+
+<span class="sd">    where :math:`\sum_{a-}` means sum over negative charged atoms,</span>
+<span class="sd">    :math:`{\rm SA}_a^-` is atomic partial surface area.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="PNSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PNSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;partial negative surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;SA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">(),</span> <span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">AtomicCharge</span><span class="p">()}</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&lt;</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">GetNumAtoms</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_version</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">rethrow_zerodiv</span><span class="p">():</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">SA</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="PPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PPSA</span><span class="p">(</span><span class="n">PNSA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;partial positive surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="PPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.PPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;partial positive surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&gt;</span> <span class="mf">0.0</span></div>
+
+
+
+<div class="viewcode-block" id="DPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.DPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DPSA</span><span class="p">(</span><span class="n">VersionCPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;difference in charged partial surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="DPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.DPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;difference in charged partial surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;PNSA&quot;</span><span class="p">:</span> <span class="n">PNSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">),</span> <span class="s2">&quot;PPSA&quot;</span><span class="p">:</span> <span class="n">PPSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">PPSA</span><span class="p">,</span> <span class="n">PNSA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PPSA</span> <span class="o">-</span> <span class="n">PNSA</span></div>
+
+
+
+<div class="viewcode-block" id="FNSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FNSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FNSA</span><span class="p">(</span><span class="n">VersionCPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;fractional charged partial negative surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="FNSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FNSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;fractional charged partial negative surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+        <span class="p">)</span>  <span class="c1"># noqa: E501</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_SA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PNSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;ASA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">(),</span> <span class="s2">&quot;SA&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_SA</span><span class="p">()}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="FPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FPSA</span><span class="p">(</span><span class="n">FNSA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;fractional charged partial positive surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="FPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.FPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;fractional charged partial positive surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+        <span class="p">)</span>  <span class="c1"># noqa: E501</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_SA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PPSA</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_version</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="WNSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WNSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WNSA</span><span class="p">(</span><span class="n">FNSA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;surface weighted charged partial negative surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="WNSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WNSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;surface weighted charged partial negative surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+        <span class="p">)</span>  <span class="c1"># noqa: E501</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SA</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span></div>
+
+
+
+<div class="viewcode-block" id="WPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WPSA</span><span class="p">(</span><span class="n">FPSA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;surface weighted charged partial positive surface area descriptor.</span>
+
+<span class="sd">    :type version: int</span>
+<span class="sd">    :param version: one of :py:attr:`versions`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="WPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.WPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;surface weighted charged partial positive surface area (version </span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_version</span>
+        <span class="p">)</span>  <span class="c1"># noqa: E501</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">ASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">SA</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ASA</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span></div>
+
+
+
+<div class="viewcode-block" id="RNCG">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCG">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RNCG</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative negative charge descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">require_3D</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="RNCG.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCG.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative negative charge&quot;</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&lt;</span> <span class="mf">0.0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">AtomicCharge</span><span class="p">()}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+
+        <span class="n">Qmax</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">))]</span>
+
+        <span class="k">return</span> <span class="n">Qmax</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RPCG">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCG">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RPCG</span><span class="p">(</span><span class="n">RNCG</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative positive charge descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="RPCG.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCG.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative positive charge&quot;</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&gt;</span> <span class="mf">0.0</span></div>
+
+
+
+<div class="viewcode-block" id="RNCS">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCS">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RNCS</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative negative charge surface area descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">_RCG</span> <span class="o">=</span> <span class="n">RNCG</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RNCS.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RNCS.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative negative charge surface area&quot;</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;RCG&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_RCG</span><span class="p">,</span> <span class="s2">&quot;SA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">(),</span> <span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">AtomicCharge</span><span class="p">()}</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&lt;</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">RCG</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
+        <span class="n">charges</span> <span class="o">=</span> <span class="n">charges</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+
+        <span class="n">SAmax</span> <span class="o">=</span> <span class="n">SA</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">))]</span>
+
+        <span class="k">return</span> <span class="n">SAmax</span> <span class="o">/</span> <span class="n">RCG</span>
+
+    <span class="n">rtype</span> <span class="o">=</span> <span class="nb">float</span></div>
+
+
+
+<div class="viewcode-block" id="RPCS">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCS">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RPCS</span><span class="p">(</span><span class="n">RNCS</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative positive charge surface area descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="RPCS.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPCS.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative positive charge surface area&quot;</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">charges</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+    <span class="n">_RCG</span> <span class="o">=</span> <span class="n">RPCG</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="TASA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TASA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TASA</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;total hydrophobic surface area descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="TASA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TASA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;total hydrophobic surface area&quot;</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.2</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;SA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">(),</span> <span class="s2">&quot;charges&quot;</span><span class="p">:</span> <span class="n">AtomicCharge</span><span class="p">()}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">SA</span><span class="p">,</span> <span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">SA</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">)])</span></div>
+
+
+
+<div class="viewcode-block" id="TPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TPSA</span><span class="p">(</span><span class="n">TASA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;total polar surface area descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+
+<div class="viewcode-block" id="TPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.TPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;total polar surface area&quot;</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_mask</span><span class="p">(</span><span class="n">charges</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.2</span></div>
+
+
+
+<div class="viewcode-block" id="RASA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RASA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RASA</span><span class="p">(</span><span class="n">CPSABase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative hydrophobic surface area descriptor.&quot;&quot;&quot;</span>
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">_TxSA</span> <span class="o">=</span> <span class="n">TASA</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RASA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RASA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative hydrophobic surface area&quot;</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;SASA&quot;</span><span class="p">:</span> <span class="n">AtomicSurfaceArea</span><span class="p">(),</span> <span class="s2">&quot;TxSA&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_TxSA</span><span class="p">}</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TxSA</span><span class="p">,</span> <span class="n">SASA</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">TxSA</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">SASA</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RPSA">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPSA">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RPSA</span><span class="p">(</span><span class="n">RASA</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;relative polar surface area descriptor.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RPSA.description">
+<a class="viewcode-back" href="../../api/mordred.CPSA.html#mordred.CPSA.RPSA.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;relative polar surface area&quot;</span></div>
+
+
+    <span class="n">since</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">_TxSA</span> <span class="o">=</span> <span class="n">TPSA</span><span class="p">()</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.CPSA</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

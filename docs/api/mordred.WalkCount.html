@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.WalkCount module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.Weight module" href="mordred.Weight.html" />
+    <link rel="prev" title="mordred.VertexAdjacencyInformation module" href="mordred.VertexAdjacencyInformation.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.Weight.html" title="mordred.Weight module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.VertexAdjacencyInformation.html" title="mordred.VertexAdjacencyInformation module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.WalkCount module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.WalkCount">
+<span id="mordred-walkcount-module"></span><h1>mordred.WalkCount module<a class="headerlink" href="#module-mordred.WalkCount" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.WalkCount.</span></span><span class="sig-name descname"><span class="pre">WalkCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">self_returning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/WalkCount.html#WalkCount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.WalkCount.WalkCount" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred._base.descriptor.Descriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Descriptor</span></code></a></p>
+<p>walk count descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>order</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – walk length</p></li>
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – sum of walk count over 1 to order</p></li>
+<li><p><strong>self_returning</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – use self returning walk only</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/WalkCount.html#WalkCount.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.WalkCount.WalkCount.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.WalkCount.WalkCount.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.WalkCount.WalkCount.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.WalkCount.WalkCount.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.WalkCount.WalkCount.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.WalkCount.WalkCount.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('order',</span> <span class="pre">'total',</span> <span class="pre">'self_returning')</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.WalkCount.WalkCount.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.WalkCount.WalkCount.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.WalkCount.WalkCount.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.WalkCount module</a><ul>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount"><code class="docutils literal notranslate"><span class="pre">WalkCount</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.since"><code class="docutils literal notranslate"><span class="pre">WalkCount.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">WalkCount.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.description"><code class="docutils literal notranslate"><span class="pre">WalkCount.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.rtype"><code class="docutils literal notranslate"><span class="pre">WalkCount.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.config"><code class="docutils literal notranslate"><span class="pre">WalkCount.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.from_json"><code class="docutils literal notranslate"><span class="pre">WalkCount.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">WalkCount.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">WalkCount.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.kekulize"><code class="docutils literal notranslate"><span class="pre">WalkCount.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.parameter_names"><code class="docutils literal notranslate"><span class="pre">WalkCount.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.require_3D"><code class="docutils literal notranslate"><span class="pre">WalkCount.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.require_connected"><code class="docutils literal notranslate"><span class="pre">WalkCount.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.WalkCount.WalkCount.to_json"><code class="docutils literal notranslate"><span class="pre">WalkCount.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.VertexAdjacencyInformation.html"
+                          title="previous chapter">mordred.VertexAdjacencyInformation module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.Weight.html"
+                          title="next chapter">mordred.Weight module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.WalkCount.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.Weight.html" title="mordred.Weight module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.VertexAdjacencyInformation.html" title="mordred.VertexAdjacencyInformation module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.WalkCount module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

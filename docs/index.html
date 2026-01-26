@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to mordred’s documentation! &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to mordred’s documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-mordred-s-documentation">
+<h1>Welcome to mordred’s documentation!<a class="headerlink" href="#welcome-to-mordred-s-documentation" title="Link to this heading">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#mordred-community">mordred-community</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#packages-using-mordredcommunity">Packages using <code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#number-of-descriptors">Number of Descriptors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#examples">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#calculate-all-descriptors">calculate all descriptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#save-to-file-display-progress-bar">save to file (display progress bar)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#stream-read-low-memory-no-number-of-molecules-information">stream read (low memory, no number of molecules information)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#only-abcindex">only ABCIndex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#abcindex-and-acidbase">ABCIndex and AcidBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#multiple-input">multiple input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#show-help">show help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#as-library">as library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#additional-examples">Additional Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html#citation">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mordred.html">mordred package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#mordred.Result"><code class="docutils literal notranslate"><span class="pre">Result</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.fill_missing"><code class="docutils literal notranslate"><span class="pre">Result.fill_missing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.drop_missing"><code class="docutils literal notranslate"><span class="pre">Result.drop_missing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.items"><code class="docutils literal notranslate"><span class="pre">Result.items()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.keys"><code class="docutils literal notranslate"><span class="pre">Result.keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.values"><code class="docutils literal notranslate"><span class="pre">Result.values()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.asdict"><code class="docutils literal notranslate"><span class="pre">Result.asdict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.ix"><code class="docutils literal notranslate"><span class="pre">Result.ix</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Result.name"><code class="docutils literal notranslate"><span class="pre">Result.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#mordred.Descriptor"><code class="docutils literal notranslate"><span class="pre">Descriptor</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.mol"><code class="docutils literal notranslate"><span class="pre">Descriptor.mol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.preset"><code class="docutils literal notranslate"><span class="pre">Descriptor.preset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.parameters"><code class="docutils literal notranslate"><span class="pre">Descriptor.parameters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.to_json"><code class="docutils literal notranslate"><span class="pre">Descriptor.to_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.calculate"><code class="docutils literal notranslate"><span class="pre">Descriptor.calculate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.dependencies"><code class="docutils literal notranslate"><span class="pre">Descriptor.dependencies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.as_argument"><code class="docutils literal notranslate"><span class="pre">Descriptor.as_argument</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#id0"><code class="docutils literal notranslate"><span class="pre">Descriptor.mol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.coord"><code class="docutils literal notranslate"><span class="pre">Descriptor.coord</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.fail"><code class="docutils literal notranslate"><span class="pre">Descriptor.fail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.rethrow_zerodiv"><code class="docutils literal notranslate"><span class="pre">Descriptor.rethrow_zerodiv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.rethrow_na"><code class="docutils literal notranslate"><span class="pre">Descriptor.rethrow_na()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Descriptor.from_json"><code class="docutils literal notranslate"><span class="pre">Descriptor.from_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#mordred.Calculator"><code class="docutils literal notranslate"><span class="pre">Calculator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.from_json"><code class="docutils literal notranslate"><span class="pre">Calculator.from_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.register_json"><code class="docutils literal notranslate"><span class="pre">Calculator.register_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.to_json"><code class="docutils literal notranslate"><span class="pre">Calculator.to_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.config"><code class="docutils literal notranslate"><span class="pre">Calculator.config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.descriptors"><code class="docutils literal notranslate"><span class="pre">Calculator.descriptors</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.register"><code class="docutils literal notranslate"><span class="pre">Calculator.register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.echo"><code class="docutils literal notranslate"><span class="pre">Calculator.echo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.map"><code class="docutils literal notranslate"><span class="pre">Calculator.map()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mordred.html#mordred.Calculator.pandas"><code class="docutils literal notranslate"><span class="pre">Calculator.pandas()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mordred.html#mordred.get_descriptors_in_module"><code class="docutils literal notranslate"><span class="pre">get_descriptors_in_module()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="subpackages/subpackages.html">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="subpackages/mordred.error.html">mordred.error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subpackages/mordred.descriptors.html">mordred.descriptors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subpackages/mordred.surface_area.html">mordred.surface_area</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/modules.html">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.ABCIndex.html">mordred.ABCIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.AcidBase.html">mordred.AcidBase module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.AdjacencyMatrix.html">mordred.AdjacencyMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Aromatic.html">mordred.Aromatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.AtomCount.html">mordred.AtomCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Autocorrelation.html">mordred.Autocorrelation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.BCUT.html">mordred.BCUT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.BalabanJ.html">mordred.BalabanJ module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.BaryszMatrix.html">mordred.BaryszMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.BertzCT.html">mordred.BertzCT module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.BondCount.html">mordred.BondCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.CPSA.html">mordred.CPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.CarbonTypes.html">mordred.CarbonTypes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Chi.html">mordred.Chi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Constitutional.html">mordred.Constitutional module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.DetourMatrix.html">mordred.DetourMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.DistanceMatrix.html">mordred.DistanceMatrix module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.EState.html">mordred.EState module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.EccentricConnectivityIndex.html">mordred.EccentricConnectivityIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.ExtendedTopochemicalAtom.html">mordred.ExtendedTopochemicalAtom module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.FragmentComplexity.html">mordred.FragmentComplexity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Framework.html">mordred.Framework module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.GeometricalIndex.html">mordred.GeometricalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.GravitationalIndex.html">mordred.GravitationalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.HydrogenBond.html">mordred.HydrogenBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.InformationContent.html">mordred.InformationContent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.KappaShapeIndex.html">mordred.KappaShapeIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Lipinski.html">mordred.Lipinski module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.LogS.html">mordred.LogS module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.McGowanVolume.html">mordred.McGowanVolume module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.MoRSE.html">mordred.MoRSE module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.MoeType.html">mordred.MoeType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.MolecularDistanceEdge.html">mordred.MolecularDistanceEdge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.MolecularId.html">mordred.MolecularId module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.MomentOfInertia.html">mordred.MomentOfInertia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.PBF.html">mordred.PBF module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.PathCount.html">mordred.PathCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Polarizability.html">mordred.Polarizability module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.RingCount.html">mordred.RingCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.RotatableBond.html">mordred.RotatableBond module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.SLogP.html">mordred.SLogP module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.TopoPSA.html">mordred.TopoPSA module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.TopologicalCharge.html">mordred.TopologicalCharge module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.TopologicalIndex.html">mordred.TopologicalIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.VdwVolumeABC.html">mordred.VdwVolumeABC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.VertexAdjacencyInformation.html">mordred.VertexAdjacencyInformation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.WalkCount.html">mordred.WalkCount module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.Weight.html">mordred.Weight module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.WienerIndex.html">mordred.WienerIndex module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/mordred.ZagrebIndex.html">mordred.ZagrebIndex module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="atomic_prop.html">atomic properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Matrix aggregating methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#spabs">SpAbs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#spmax">SpMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#spdiam">SpDiam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#spad">SpAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#spmad">SpMAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#logee">LogEE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#sm1">SM1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#ve1">VE1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#ve2">VE2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#ve3">VE3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#vr1">VR1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#vr2">VR2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matrix.html#vr3">VR3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="descriptors.html">Descriptor List</a></li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Welcome to mordred’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="introduction.html"
+                          title="next chapter">Introduction</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to mordred’s documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

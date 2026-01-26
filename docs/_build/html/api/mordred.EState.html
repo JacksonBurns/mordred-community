@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.EState module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.EccentricConnectivityIndex module" href="mordred.EccentricConnectivityIndex.html" />
+    <link rel="prev" title="mordred.DistanceMatrix module" href="mordred.DistanceMatrix.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.DistanceMatrix.html" title="mordred.DistanceMatrix module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.EState module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.EState">
+<span id="mordred-estate-module"></span><h1>mordred.EState module<a class="headerlink" href="#module-mordred.EState" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.EState.</span></span><span class="sig-name descname"><span class="pre">AtomTypeEState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'count'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sLi'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/EState.html#AtomTypeEState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.EState.AtomTypeEState" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">EStateBase</span></code></p>
+<p>atom type e-state descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of aggr_types</p></li>
+<li><p><strong>estate</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – one of es_types</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when type in [“min”, “max”] and <span class="math notranslate nohighlight">\(N_{\rm X} = 0\)</span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>References</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://dx.doi.org/10.1021/ci00028a014">doi:10.1021/ci00028a014</a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/EState.html#AtomTypeEState.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.EState.AtomTypeEState.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.aggr_types">
+<span class="sig-name descname"><span class="pre">aggr_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('count',</span> <span class="pre">'sum',</span> <span class="pre">'max',</span> <span class="pre">'min')</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.aggr_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.es_types">
+<span class="sig-name descname"><span class="pre">es_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('sLi',</span> <span class="pre">'ssBe',</span> <span class="pre">'ssssBe',</span> <span class="pre">'ssBH',</span> <span class="pre">'sssB',</span> <span class="pre">'ssssB',</span> <span class="pre">'sCH3',</span> <span class="pre">'dCH2',</span> <span class="pre">'ssCH2',</span> <span class="pre">'tCH',</span> <span class="pre">'dsCH',</span> <span class="pre">'aaCH',</span> <span class="pre">'sssCH',</span> <span class="pre">'ddC',</span> <span class="pre">'tsC',</span> <span class="pre">'dssC',</span> <span class="pre">'aasC',</span> <span class="pre">'aaaC',</span> <span class="pre">'ssssC',</span> <span class="pre">'sNH3',</span> <span class="pre">'sNH2',</span> <span class="pre">'ssNH2',</span> <span class="pre">'dNH',</span> <span class="pre">'ssNH',</span> <span class="pre">'aaNH',</span> <span class="pre">'tN',</span> <span class="pre">'sssNH',</span> <span class="pre">'dsN',</span> <span class="pre">'aaN',</span> <span class="pre">'sssN',</span> <span class="pre">'ddsN',</span> <span class="pre">'aasN',</span> <span class="pre">'ssssN',</span> <span class="pre">'sOH',</span> <span class="pre">'dO',</span> <span class="pre">'ssO',</span> <span class="pre">'aaO',</span> <span class="pre">'sF',</span> <span class="pre">'sSiH3',</span> <span class="pre">'ssSiH2',</span> <span class="pre">'sssSiH',</span> <span class="pre">'ssssSi',</span> <span class="pre">'sPH2',</span> <span class="pre">'ssPH',</span> <span class="pre">'sssP',</span> <span class="pre">'dsssP',</span> <span class="pre">'sssssP',</span> <span class="pre">'sSH',</span> <span class="pre">'dS',</span> <span class="pre">'ssS',</span> <span class="pre">'aaS',</span> <span class="pre">'dssS',</span> <span class="pre">'ddssS',</span> <span class="pre">'sCl',</span> <span class="pre">'sGeH3',</span> <span class="pre">'ssGeH2',</span> <span class="pre">'sssGeH',</span> <span class="pre">'ssssGe',</span> <span class="pre">'sAsH2',</span> <span class="pre">'ssAsH',</span> <span class="pre">'sssAs',</span> <span class="pre">'sssdAs',</span> <span class="pre">'sssssAs',</span> <span class="pre">'sSeH',</span> <span class="pre">'dSe',</span> <span class="pre">'ssSe',</span> <span class="pre">'aaSe',</span> <span class="pre">'dssSe',</span> <span class="pre">'ddssSe',</span> <span class="pre">'sBr',</span> <span class="pre">'sSnH3',</span> <span class="pre">'ssSnH2',</span> <span class="pre">'sssSnH',</span> <span class="pre">'ssssSn',</span> <span class="pre">'sI',</span> <span class="pre">'sPbH3',</span> <span class="pre">'ssPbH2',</span> <span class="pre">'sssPbH',</span> <span class="pre">'ssssPb')</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.es_types" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.rtype">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.EState.AtomTypeEState.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>Return type.</p>
+<ul class="simple">
+<li><p>“count”: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p></li>
+<li><p>“other”: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.EState.AtomTypeEState.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.EState.AtomTypeEState.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.EState.AtomTypeEState.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.EState.AtomTypeEState.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('type',</span> <span class="pre">'estate')</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.EState.AtomTypeEState.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.EState.AtomTypeEState.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.EState.AtomTypeEState.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.EState module</a><ul>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.since"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.description"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.aggr_types"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.aggr_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.es_types"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.es_types</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.rtype"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.config"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.from_json"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.kekulize"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.parameter_names"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.require_3D"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.require_connected"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.EState.AtomTypeEState.to_json"><code class="docutils literal notranslate"><span class="pre">AtomTypeEState.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.DistanceMatrix.html"
+                          title="previous chapter">mordred.DistanceMatrix module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.EccentricConnectivityIndex.html"
+                          title="next chapter">mordred.EccentricConnectivityIndex module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.EState.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.EccentricConnectivityIndex.html" title="mordred.EccentricConnectivityIndex module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.DistanceMatrix.html" title="mordred.DistanceMatrix module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.EState module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.error &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.descriptors" href="mordred.descriptors.html" />
+    <link rel="prev" title="Subpackages" href="subpackages.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.descriptors.html" title="mordred.descriptors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="subpackages.html" title="Subpackages"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="subpackages.html" accesskey="U">Subpackages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.error</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.error">
+<span id="mordred-error"></span><h1>mordred.error<a class="headerlink" href="#module-mordred.error" title="Link to this heading">¶</a></h1>
+<p>Error objects.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.error.MissingValueBase">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">MissingValueBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#MissingValueBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.MissingValueBase" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Base class of missing values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><em>Exception</em></a>) – error object</p></li>
+<li><p><strong>stack</strong> (<em>callstack</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.error.MissingValueBase.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#mordred.error.MissingValueBase.error" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.error.MissingValueBase.stack">
+<span class="sig-name descname"><span class="pre">stack</span></span><a class="headerlink" href="#mordred.error.MissingValueBase.stack" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.error.MissingValueBase.header">
+<em class="property"><span class="k"><span class="pre">abstract</span></span><span class="w"> </span><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">header</span></span><a class="headerlink" href="#mordred.error.MissingValueBase.header" title="Link to this definition">¶</a></dt>
+<dd><p>Header of warning message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.error.Missing">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">Missing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Missing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.Missing" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">MissingValueBase</span></code></a></p>
+<p>known errored value.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.error.Missing.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Missing'</span></em><a class="headerlink" href="#mordred.error.Missing.header" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.error.Error">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">Error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stack</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#Error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.Error" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MissingValueBase" title="mordred.error.MissingValueBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">MissingValueBase</span></code></a></p>
+<p>unknown errored value.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.error.Error.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ERROR'</span></em><a class="headerlink" href="#mordred.error.Error.header" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mordred.error.MordredException">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">MordredException</span></span><a class="reference internal" href="../_modules/mordred/error.html#MordredException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.MordredException" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mordred.error.MultipleFragments">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">MultipleFragments</span></span><a class="reference internal" href="../_modules/mordred/error.html#MultipleFragments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.MultipleFragments" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MordredException</span></code></a></p>
+<p>multiple fragments detected on require_connected Descriptor.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mordred.error.Missing3DCoordinate">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">Missing3DCoordinate</span></span><a class="reference internal" href="../_modules/mordred/error.html#Missing3DCoordinate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.Missing3DCoordinate" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MordredException</span></code></a></p>
+<p>missing 3D coordinate on require_3D Descriptor.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mordred.error.DuplicatedDescriptorName">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">DuplicatedDescriptorName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/error.html#DuplicatedDescriptorName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.DuplicatedDescriptorName" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MordredException</span></code></a></p>
+<p>duplicated string replisantation of descriptor.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="mordred.error.Timeout">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.error.</span></span><span class="sig-name descname"><span class="pre">Timeout</span></span><a class="reference internal" href="../_modules/mordred/error.html#Timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.error.Timeout" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mordred.error.MordredException" title="mordred.error.MordredException"><code class="xref py py-class docutils literal notranslate"><span class="pre">MordredException</span></code></a></p>
+<p>calculation timed out.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.error</a><ul>
+<li><a class="reference internal" href="#mordred.error.MissingValueBase"><code class="docutils literal notranslate"><span class="pre">MissingValueBase</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.error.MissingValueBase.error"><code class="docutils literal notranslate"><span class="pre">MissingValueBase.error</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.MissingValueBase.stack"><code class="docutils literal notranslate"><span class="pre">MissingValueBase.stack</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.MissingValueBase.header"><code class="docutils literal notranslate"><span class="pre">MissingValueBase.header</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.error.Missing"><code class="docutils literal notranslate"><span class="pre">Missing</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.error.Missing.header"><code class="docutils literal notranslate"><span class="pre">Missing.header</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.error.Error"><code class="docutils literal notranslate"><span class="pre">Error</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.error.Error.header"><code class="docutils literal notranslate"><span class="pre">Error.header</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.error.MordredException"><code class="docutils literal notranslate"><span class="pre">MordredException</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.MultipleFragments"><code class="docutils literal notranslate"><span class="pre">MultipleFragments</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.Missing3DCoordinate"><code class="docutils literal notranslate"><span class="pre">Missing3DCoordinate</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.DuplicatedDescriptorName"><code class="docutils literal notranslate"><span class="pre">DuplicatedDescriptorName</span></code></a></li>
+<li><a class="reference internal" href="#mordred.error.Timeout"><code class="docutils literal notranslate"><span class="pre">Timeout</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="subpackages.html"
+                          title="previous chapter">Subpackages</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.descriptors.html"
+                          title="next chapter">mordred.descriptors</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/subpackages/mordred.error.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.descriptors.html" title="mordred.descriptors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="subpackages.html" title="Subpackages"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="subpackages.html" >Subpackages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.error</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

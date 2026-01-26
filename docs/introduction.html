@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mordred package" href="mordred.html" />
+    <link rel="prev" title="Welcome to mordred’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.html" title="mordred package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mordred’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+</section>
+<section id="mordred-community">
+<h1>mordred-community<a class="headerlink" href="#mordred-community" title="Link to this heading">¶</a></h1>
+<p>Community maintained version of the <a class="reference external" href="https://github.com/mordred-descriptor/mordred">mordred molecular descriptor calculator</a> which is no longer maintained.</p>
+<p>We are accepting pull requests and looking for maintainers!
+Reach out on the Issues page if you are interested in helping out!</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code> is currently available on PyPI with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mordredcommunity</span></code> or via the conda package manager with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">mordredcommunity</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code> supports Python 3.9 and newer on all platforms.</p>
+<p>To add support for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and progress bars, use PyPI and call <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mordredcommunity[full]</span></code>.</p>
+<p>Usage of <code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">mordred</span></code>.</p>
+</section>
+<section id="packages-using-mordredcommunity">
+<h2>Packages using <code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code><a class="headerlink" href="#packages-using-mordredcommunity" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mordred-gui</span></code> (<a class="reference external" href="https://github.com/research11111/mordred-gui">github.com/research11111/mordred-gui</a>): Graphical user interface wrapper to <code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code></p></li>
+</ul>
+</section>
+<section id="number-of-descriptors">
+<h2>Number of Descriptors<a class="headerlink" href="#number-of-descriptors" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">mordred</span><span class="w"> </span><span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n_all</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n_2D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2D:    </span><span class="si">{:5}</span><span class="se">\n</span><span class="s2">3D:    </span><span class="si">{:5}</span><span class="se">\n</span><span class="s2">------------</span><span class="se">\n</span><span class="s2">total: </span><span class="si">{:5}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_2D</span><span class="p">,</span> <span class="n">n_all</span> <span class="o">-</span> <span class="n">n_2D</span><span class="p">,</span> <span class="n">n_all</span><span class="p">))</span>
+<span class="go">2D:     1613</span>
+<span class="go">3D:      213</span>
+<span class="go">------------</span>
+<span class="go">total:  1826</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h1>
+<section id="calculate-all-descriptors">
+<h2>calculate all descriptors<a class="headerlink" href="#calculate-all-descriptors" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span>
+<span class="n">name</span><span class="p">,</span><span class="n">ECIndex</span><span class="p">,</span><span class="n">WPath</span><span class="p">,</span><span class="n">WPol</span><span class="p">,</span><span class="n">Zagreb1</span><span class="p">,</span> <span class="p">(</span><span class="n">snip</span><span class="p">)</span>
+<span class="n">benzene</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">24.0</span><span class="p">,</span> <span class="p">(</span><span class="n">snip</span><span class="p">)</span>
+<span class="n">chrolobenzene</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">30.0</span><span class="p">,</span> <span class="p">(</span><span class="n">snip</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="save-to-file-display-progress-bar">
+<h2>save to file (display progress bar)<a class="headerlink" href="#save-to-file-display-progress-bar" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span> <span class="o">-</span><span class="n">o</span> <span class="n">example</span><span class="o">.</span><span class="n">csv</span>
+<span class="mi">50</span><span class="o">%|</span><span class="err">███████████████████████████████████████▌</span>                                       <span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="p">[</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="o">&lt;</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span>  <span class="mf">7.66</span><span class="n">it</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="stream-read-low-memory-no-number-of-molecules-information">
+<h2>stream read (low memory, no number of molecules information)<a class="headerlink" href="#stream-read-low-memory-no-number-of-molecules-information" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">example</span><span class="o">.</span><span class="n">csv</span>
+<span class="mi">0</span><span class="n">it</span> <span class="p">[</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="err">?</span><span class="n">it</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="only-abcindex">
+<h2>only ABCIndex<a class="headerlink" href="#only-abcindex" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span> <span class="o">-</span><span class="n">d</span> <span class="n">ABCIndex</span>
+<span class="n">name</span><span class="p">,</span><span class="n">ABC</span><span class="p">,</span><span class="n">ABCGG</span>
+<span class="n">benzene</span><span class="p">,</span><span class="mf">4.242640687119286</span><span class="p">,</span><span class="mf">3.9999999999999996</span>
+<span class="n">chlorobenzene</span><span class="p">,</span><span class="mf">5.059137268047012</span><span class="p">,</span><span class="mf">4.785854275382693</span>
+</pre></div>
+</div>
+</section>
+<section id="abcindex-and-acidbase">
+<h2>ABCIndex and AcidBase<a class="headerlink" href="#abcindex-and-acidbase" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span> <span class="o">-</span><span class="n">d</span> <span class="n">ABCIndex</span> <span class="o">-</span><span class="n">d</span> <span class="n">AcidBase</span>
+<span class="n">name</span><span class="p">,</span><span class="n">ABC</span><span class="p">,</span><span class="n">ABCGG</span><span class="p">,</span><span class="n">nAcid</span><span class="p">,</span><span class="n">nBase</span>
+<span class="n">benzene</span><span class="p">,</span><span class="mf">4.242640687119286</span><span class="p">,</span><span class="mf">3.9999999999999996</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="n">chlorobenzene</span><span class="p">,</span><span class="mf">5.059137268047012</span><span class="p">,</span><span class="mf">4.785854275382693</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-input">
+<h2>multiple input<a class="headerlink" href="#multiple-input" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="n">example</span><span class="o">.</span><span class="n">smi</span> <span class="n">example2</span><span class="o">.</span><span class="n">smi</span> <span class="o">-</span><span class="n">d</span> <span class="n">ABCIndex</span>
+<span class="n">name</span><span class="p">,</span><span class="n">ABC</span><span class="p">,</span><span class="n">ABCGG</span>
+<span class="n">benzene</span><span class="p">,</span><span class="mf">4.242640687119286</span><span class="p">,</span><span class="mf">3.9999999999999996</span>
+<span class="n">chlorobenzene</span><span class="p">,</span><span class="mf">5.059137268047012</span><span class="p">,</span><span class="mf">4.785854275382693</span>
+<span class="n">pentane</span><span class="p">,</span><span class="mf">2.8284271247461903</span><span class="p">,</span><span class="mf">3.1462643699419726</span>
+</pre></div>
+</div>
+</section>
+<section id="show-help">
+<h2>show help<a class="headerlink" href="#show-help" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">mordred</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span>
+                            <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">q</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+                            <span class="n">INPUT</span> <span class="p">[</span><span class="n">INPUT</span> <span class="o">...</span><span class="p">]</span>
+
+<span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="n">INPUT</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+    <span class="o">--</span><span class="n">version</span>             <span class="nb">input</span> <span class="n">molecular</span> <span class="n">file</span>
+    <span class="o">-</span><span class="n">t</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">},</span> <span class="o">--</span><span class="nb">type</span> <span class="p">{</span><span class="n">auto</span><span class="p">,</span><span class="n">sdf</span><span class="p">,</span><span class="n">mol</span><span class="p">,</span><span class="n">smi</span><span class="p">}</span>
+                        <span class="nb">input</span> <span class="n">filetype</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">auto</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">OUTPUT</span>
+                        <span class="n">output</span> <span class="n">file</span> <span class="n">path</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">p</span> <span class="n">PROCESSES</span><span class="p">,</span> <span class="o">--</span><span class="n">processes</span> <span class="n">PROCESSES</span>
+                        <span class="n">number</span> <span class="n">of</span> <span class="n">processes</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">number</span> <span class="n">of</span> <span class="n">logical</span>
+                        <span class="n">processors</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">q</span><span class="p">,</span> <span class="o">--</span><span class="n">quiet</span>           <span class="n">hide</span> <span class="n">progress</span> <span class="n">bar</span>
+    <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stream</span>          <span class="n">stream</span> <span class="n">read</span>
+    <span class="o">-</span><span class="n">d</span> <span class="n">DESC</span><span class="p">,</span> <span class="o">--</span><span class="n">descriptor</span> <span class="n">DESC</span>
+                        <span class="n">descriptors</span> <span class="n">to</span> <span class="n">calculate</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="nb">all</span><span class="p">)</span>
+    <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">--</span><span class="mi">3</span><span class="n">D</span>              <span class="n">use</span> <span class="mi">3</span><span class="n">D</span> <span class="n">descriptors</span> <span class="p">(</span><span class="n">require</span> <span class="n">sdf</span> <span class="ow">or</span> <span class="n">mol</span> <span class="n">file</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">verbosity</span>       <span class="n">verbosity</span>
+
+<span class="n">descriptors</span><span class="p">:</span> <span class="n">ABCIndex</span> <span class="n">AcidBase</span> <span class="n">AdjacencyMatrix</span> <span class="n">Aromatic</span> <span class="n">AtomCount</span>
+<span class="n">Autocorrelation</span> <span class="n">BalabanJ</span> <span class="n">BaryszMatrix</span> <span class="n">BCUT</span> <span class="n">BertzCT</span> <span class="n">BondCount</span> <span class="n">CarbonTypes</span> <span class="n">Chi</span>
+<span class="n">Constitutional</span> <span class="n">CPSA</span> <span class="n">DetourMatrix</span> <span class="n">DistanceMatrix</span> <span class="n">EccentricConnectivityIndex</span>
+<span class="n">EState</span> <span class="n">ExtendedTopochemicalAtom</span> <span class="n">FragmentComplexity</span> <span class="n">Framework</span> <span class="n">GeometricalIndex</span>
+<span class="n">GravitationalIndex</span> <span class="n">HydrogenBond</span> <span class="n">InformationContent</span> <span class="n">KappaShapeIndex</span> <span class="n">Lipinski</span>
+<span class="n">McGowanVolume</span> <span class="n">MoeType</span> <span class="n">MolecularDistanceEdge</span> <span class="n">MolecularId</span> <span class="n">MomentOfInertia</span> <span class="n">MoRSE</span>
+<span class="n">PathCount</span> <span class="n">Polarizability</span> <span class="n">RingCount</span> <span class="n">RotatableBond</span> <span class="n">SLogP</span> <span class="n">TopologicalCharge</span>
+<span class="n">TopologicalIndex</span> <span class="n">TopoPSA</span> <span class="n">VdwVolumeABC</span> <span class="n">VertexAdjacencyInformation</span> <span class="n">WalkCount</span>
+<span class="n">Weight</span> <span class="n">WienerIndex</span> <span class="n">ZagrebIndex</span>
+</pre></div>
+</div>
+</section>
+<section id="as-library">
+<h2>as library<a class="headerlink" href="#as-library" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">rdkit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chem</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">mordred</span><span class="w"> </span><span class="kn">import</span> <span class="n">Calculator</span><span class="p">,</span> <span class="n">descriptors</span>
+
+<span class="go"># create descriptor calculator with all descriptors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">calc</span><span class="o">.</span><span class="n">descriptors</span><span class="p">)</span>
+<span class="go">1613</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">Calculator</span><span class="p">(</span><span class="n">descriptors</span><span class="p">,</span> <span class="n">ignore_3D</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">))</span>
+<span class="go">1612</span>
+
+<span class="go"># calculate single molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="s1">&#39;c1ccccc1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calc</span><span class="p">(</span><span class="n">mol</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[4.242640687119286, 3.9999999999999996, 0]</span>
+
+<span class="go"># calculate multiple molecule</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Chem</span><span class="o">.</span><span class="n">MolFromSmiles</span><span class="p">(</span><span class="n">smi</span><span class="p">)</span> <span class="k">for</span> <span class="n">smi</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;c1ccccc1Cl&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1O&#39;</span><span class="p">,</span> <span class="s1">&#39;c1ccccc1N&#39;</span><span class="p">]]</span>
+
+<span class="go"># as pandas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">pandas</span><span class="p">(</span><span class="n">mols</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SLogP&#39;</span><span class="p">]</span>
+<span class="go">0    2.3400</span>
+<span class="go">1    1.3922</span>
+<span class="go">2    1.2688</span>
+<span class="go">Name: SLogP, dtype: float64</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-examples">
+<h2>Additional Examples<a class="headerlink" href="#additional-examples" title="Link to this heading">¶</a></h2>
+<p>see <a class="reference external" href="https://github.com/JacksonBurns/mordred-community/tree/main/examples">examples</a> on GitHub.</p>
+</section>
+</section>
+<section id="citation">
+<h1>Citation<a class="headerlink" href="#citation" title="Link to this heading">¶</a></h1>
+<p>Please cite the original publication describing <code class="docutils literal notranslate"><span class="pre">mordred</span></code> <em>and</em> this repository specifically.
+Moriwaki H, Tian Y-S, Kawashita N, Takagi T (2018) Mordred: a molecular descriptor calculator. Journal of Cheminformatics 10:4 . doi: <a class="reference external" href="https://doi.org/10.1186/s13321-018-0258-y">10.1186/s13321-018-0258-y</a></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#mordred-community">mordred-community</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#packages-using-mordredcommunity">Packages using <code class="docutils literal notranslate"><span class="pre">mordredcommunity</span></code></a></li>
+<li><a class="reference internal" href="#number-of-descriptors">Number of Descriptors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#calculate-all-descriptors">calculate all descriptors</a></li>
+<li><a class="reference internal" href="#save-to-file-display-progress-bar">save to file (display progress bar)</a></li>
+<li><a class="reference internal" href="#stream-read-low-memory-no-number-of-molecules-information">stream read (low memory, no number of molecules information)</a></li>
+<li><a class="reference internal" href="#only-abcindex">only ABCIndex</a></li>
+<li><a class="reference internal" href="#abcindex-and-acidbase">ABCIndex and AcidBase</a></li>
+<li><a class="reference internal" href="#multiple-input">multiple input</a></li>
+<li><a class="reference internal" href="#show-help">show help</a></li>
+<li><a class="reference internal" href="#as-library">as library</a></li>
+<li><a class="reference internal" href="#additional-examples">Additional Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#citation">Citation</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Welcome to mordred’s documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.html"
+                          title="next chapter">mordred package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.html" title="mordred package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mordred’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

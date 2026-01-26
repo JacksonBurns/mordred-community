@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.MolecularDistanceEdge module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.MolecularId module" href="mordred.MolecularId.html" />
+    <link rel="prev" title="mordred.MoeType module" href="mordred.MoeType.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularId.html" title="mordred.MolecularId module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MoeType.html" title="mordred.MoeType module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.MolecularDistanceEdge module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.MolecularDistanceEdge">
+<span id="mordred-moleculardistanceedge-module"></span><h1>mordred.MolecularDistanceEdge module<a class="headerlink" href="#module-mordred.MolecularDistanceEdge" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MolecularDistanceEdge.</span></span><span class="sig-name descname"><span class="pre">MolecularDistanceEdge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valence2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'C'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MolecularDistanceEdge.html#MolecularDistanceEdge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred._base.descriptor.Descriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Descriptor</span></code></a></p>
+<p>molecular distance edge descriptor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence1</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – valence of first atom</p></li>
+<li><p><strong>valence2</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – valence of second atom</p></li>
+<li><p><strong>element</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – atomic symbol or atomic number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when <span class="math notranslate nohighlight">\(N_{\rm MDE} = 0\)</span></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MolecularDistanceEdge.html#MolecularDistanceEdge.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('valence1',</span> <span class="pre">'valence2',</span> <span class="pre">'element')</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MolecularDistanceEdge.MolecularDistanceEdge.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.MolecularDistanceEdge module</a><ul>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.since"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.description"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.config"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.from_json"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.kekulize"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.parameter_names"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_3D"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.require_connected"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.rtype"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MolecularDistanceEdge.MolecularDistanceEdge.to_json"><code class="docutils literal notranslate"><span class="pre">MolecularDistanceEdge.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.MoeType.html"
+                          title="previous chapter">mordred.MoeType module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.MolecularId.html"
+                          title="next chapter">mordred.MolecularId module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.MolecularDistanceEdge.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularId.html" title="mordred.MolecularId module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MoeType.html" title="mordred.MoeType module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.MolecularDistanceEdge module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

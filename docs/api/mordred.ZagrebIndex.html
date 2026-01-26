@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.ZagrebIndex module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="atomic properties" href="../atomic_prop.html" />
+    <link rel="prev" title="mordred.WienerIndex module" href="mordred.WienerIndex.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../atomic_prop.html" title="atomic properties"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.WienerIndex.html" title="mordred.WienerIndex module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.ZagrebIndex module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.ZagrebIndex">
+<span id="mordred-zagrebindex-module"></span><h1>mordred.ZagrebIndex module<a class="headerlink" href="#module-mordred.ZagrebIndex" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.ZagrebIndex.</span></span><span class="sig-name descname"><span class="pre">ZagrebIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ZagrebIndex.html#ZagrebIndex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred._base.descriptor.Descriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Descriptor</span></code></a></p>
+<p>Zagreb index descriptor.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}{}^\lambda M_1 = \sum_{atoms} d_i^\lambda\\{}^\lambda M_2 = \sum_{edges} \left(d_i \cdot d_j \right)^\lambda\end{aligned}\end{align} \]</div>
+<p>where
+<span class="math notranslate nohighlight">\(d_i\)</span> is degree of i-th atom</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Zagreb index version. 1 or 2.</p></li>
+<li><p><strong>variable</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – lambda value.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NaN when valence of any atoms are 0</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/ZagrebIndex.html#ZagrebIndex.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('version',</span> <span class="pre">'variable')</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.ZagrebIndex.ZagrebIndex.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.ZagrebIndex.ZagrebIndex.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.ZagrebIndex module</a><ul>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.since"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.description"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.rtype"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.config"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.from_json"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.kekulize"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.parameter_names"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.require_3D"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.require_connected"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.ZagrebIndex.ZagrebIndex.to_json"><code class="docutils literal notranslate"><span class="pre">ZagrebIndex.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.WienerIndex.html"
+                          title="previous chapter">mordred.WienerIndex module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../atomic_prop.html"
+                          title="next chapter">atomic properties</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.ZagrebIndex.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../atomic_prop.html" title="atomic properties"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.WienerIndex.html" title="mordred.WienerIndex module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.ZagrebIndex module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

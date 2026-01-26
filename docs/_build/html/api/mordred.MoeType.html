@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mordred.MoeType module &#8212; mordredcommunity 2.0.7 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=9a3ee07e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mordred.MolecularDistanceEdge module" href="mordred.MolecularDistanceEdge.html" />
+    <link rel="prev" title="mordred.MoRSE module" href="mordred.MoRSE.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularDistanceEdge.html" title="mordred.MolecularDistanceEdge module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MoRSE.html" title="mordred.MoRSE module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" accesskey="U">Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.MoeType module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-mordred.MoeType">
+<span id="mordred-moetype-module"></span><h1>mordred.MoeType module<a class="headerlink" href="#module-mordred.MoeType" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">LabuteASA</span></span><a class="reference internal" href="../_modules/mordred/MoeType.html#LabuteASA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.LabuteASA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred._base.descriptor.Descriptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Descriptor</span></code></a></p>
+<p>Labute’s Approximate Surface Area descriptor(rdkit wrapper).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#LabuteASA.description"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.LabuteASA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.LabuteASA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.LabuteASA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.LabuteASA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.LabuteASA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.LabuteASA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">PEOE_VSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#PEOE_VSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.PEOE_VSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MoeTypeBase</span></code></p>
+<p>MOE type descriptors using gasteiger charge and surface area contribution(rdkit wrapper).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (<span class="math notranslate nohighlight">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.k_max">
+<span class="sig-name descname"><span class="pre">k_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">14</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.k_max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('k',)</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.PEOE_VSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.PEOE_VSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">SMR_VSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#SMR_VSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.SMR_VSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MoeTypeBase</span></code></p>
+<p>MOE type descriptors using Wildman-Crippen MR and surface area contribution(rdkit wrapper).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (<span class="math notranslate nohighlight">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.k_max">
+<span class="sig-name descname"><span class="pre">k_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.k_max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('k',)</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SMR_VSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SMR_VSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SMR_VSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">SlogP_VSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#SlogP_VSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.SlogP_VSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MoeTypeBase</span></code></p>
+<p>MOE type descriptors using Wildman-Crippen LogP and surface area contribution(rdkit wrapper).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (<span class="math notranslate nohighlight">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.k_max">
+<span class="sig-name descname"><span class="pre">k_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.k_max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('k',)</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.SlogP_VSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.SlogP_VSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">EState_VSA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#EState_VSA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.EState_VSA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MoeTypeBase</span></code></p>
+<p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (<span class="math notranslate nohighlight">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.k_max">
+<span class="sig-name descname"><span class="pre">k_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">11</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.k_max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.EState_VSA.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('k',)</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.EState_VSA.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.EState_VSA.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.EState_VSA.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.EState_VSA.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mordred.MoeType.</span></span><span class="sig-name descname"><span class="pre">VSA_EState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mordred/MoeType.html#VSA_EState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mordred.MoeType.VSA_EState" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MoeTypeBase</span></code></p>
+<p>MOE type descriptors using EState indices and surface area contribution(rdkit wrapper).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – (<span class="math notranslate nohighlight">\(1 &lt;= k &lt;= k_{\rm max}\)</span>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.since">
+<span class="sig-name descname"><span class="pre">since</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Version('1.0.0')&gt;</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.since" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.k_max">
+<span class="sig-name descname"><span class="pre">k_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.k_max" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.config">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#mordred.MoeType.VSA_EState.config" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.description" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.explicit_hydrogens">
+<span class="sig-name descname"><span class="pre">explicit_hydrogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.explicit_hydrogens" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Create Descriptor instance from json dict.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – descriptor dict</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="../mordred.html#mordred.Descriptor" title="mordred.Descriptor">Descriptor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.get_3D_mol">
+<span class="sig-name descname"><span class="pre">get_3D_mol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.get_3D_mol" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.get_parameter_dict">
+<span class="sig-name descname"><span class="pre">get_parameter_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.get_parameter_dict" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.kekulize">
+<span class="sig-name descname"><span class="pre">kekulize</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.kekulize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.parameter_names">
+<span class="sig-name descname"><span class="pre">parameter_names</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('k',)</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.parameter_names" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.require_3D">
+<span class="sig-name descname"><span class="pre">require_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.require_3D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.require_connected">
+<span class="sig-name descname"><span class="pre">require_connected</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#mordred.MoeType.VSA_EState.require_connected" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.rtype">
+<span class="sig-name descname"><span class="pre">rtype</span></span><a class="headerlink" href="#mordred.MoeType.VSA_EState.rtype" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mordred.MoeType.VSA_EState.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mordred.MoeType.VSA_EState.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to json serializable dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dictionary of descriptor</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">mordred.MoeType module</a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA"><code class="docutils literal notranslate"><span class="pre">LabuteASA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.since"><code class="docutils literal notranslate"><span class="pre">LabuteASA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">LabuteASA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.description"><code class="docutils literal notranslate"><span class="pre">LabuteASA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.rtype"><code class="docutils literal notranslate"><span class="pre">LabuteASA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.config"><code class="docutils literal notranslate"><span class="pre">LabuteASA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.from_json"><code class="docutils literal notranslate"><span class="pre">LabuteASA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">LabuteASA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">LabuteASA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.kekulize"><code class="docutils literal notranslate"><span class="pre">LabuteASA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.parameter_names"><code class="docutils literal notranslate"><span class="pre">LabuteASA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.require_3D"><code class="docutils literal notranslate"><span class="pre">LabuteASA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.require_connected"><code class="docutils literal notranslate"><span class="pre">LabuteASA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.LabuteASA.to_json"><code class="docutils literal notranslate"><span class="pre">LabuteASA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.since"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.k_max"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.k_max</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.config"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.description"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.from_json"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.kekulize"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.require_3D"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.require_connected"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.rtype"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.PEOE_VSA.to_json"><code class="docutils literal notranslate"><span class="pre">PEOE_VSA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA"><code class="docutils literal notranslate"><span class="pre">SMR_VSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.since"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.k_max"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.k_max</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.config"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.description"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.from_json"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.kekulize"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.require_3D"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.require_connected"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.rtype"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SMR_VSA.to_json"><code class="docutils literal notranslate"><span class="pre">SMR_VSA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.since"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.k_max"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.k_max</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.config"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.description"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.from_json"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.kekulize"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.require_3D"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.require_connected"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.rtype"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.SlogP_VSA.to_json"><code class="docutils literal notranslate"><span class="pre">SlogP_VSA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA"><code class="docutils literal notranslate"><span class="pre">EState_VSA</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.since"><code class="docutils literal notranslate"><span class="pre">EState_VSA.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.k_max"><code class="docutils literal notranslate"><span class="pre">EState_VSA.k_max</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.config"><code class="docutils literal notranslate"><span class="pre">EState_VSA.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.description"><code class="docutils literal notranslate"><span class="pre">EState_VSA.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">EState_VSA.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.from_json"><code class="docutils literal notranslate"><span class="pre">EState_VSA.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">EState_VSA.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">EState_VSA.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.kekulize"><code class="docutils literal notranslate"><span class="pre">EState_VSA.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.parameter_names"><code class="docutils literal notranslate"><span class="pre">EState_VSA.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.require_3D"><code class="docutils literal notranslate"><span class="pre">EState_VSA.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.require_connected"><code class="docutils literal notranslate"><span class="pre">EState_VSA.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.rtype"><code class="docutils literal notranslate"><span class="pre">EState_VSA.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.EState_VSA.to_json"><code class="docutils literal notranslate"><span class="pre">EState_VSA.to_json()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState"><code class="docutils literal notranslate"><span class="pre">VSA_EState</span></code></a><ul>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.since"><code class="docutils literal notranslate"><span class="pre">VSA_EState.since</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.k_max"><code class="docutils literal notranslate"><span class="pre">VSA_EState.k_max</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.config"><code class="docutils literal notranslate"><span class="pre">VSA_EState.config</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.description"><code class="docutils literal notranslate"><span class="pre">VSA_EState.description()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.explicit_hydrogens"><code class="docutils literal notranslate"><span class="pre">VSA_EState.explicit_hydrogens</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.from_json"><code class="docutils literal notranslate"><span class="pre">VSA_EState.from_json()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.get_3D_mol"><code class="docutils literal notranslate"><span class="pre">VSA_EState.get_3D_mol()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.get_parameter_dict"><code class="docutils literal notranslate"><span class="pre">VSA_EState.get_parameter_dict()</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.kekulize"><code class="docutils literal notranslate"><span class="pre">VSA_EState.kekulize</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.parameter_names"><code class="docutils literal notranslate"><span class="pre">VSA_EState.parameter_names</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.require_3D"><code class="docutils literal notranslate"><span class="pre">VSA_EState.require_3D</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.require_connected"><code class="docutils literal notranslate"><span class="pre">VSA_EState.require_connected</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.rtype"><code class="docutils literal notranslate"><span class="pre">VSA_EState.rtype</span></code></a></li>
+<li><a class="reference internal" href="#mordred.MoeType.VSA_EState.to_json"><code class="docutils literal notranslate"><span class="pre">VSA_EState.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="mordred.MoRSE.html"
+                          title="previous chapter">mordred.MoRSE module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="mordred.MolecularDistanceEdge.html"
+                          title="next chapter">mordred.MolecularDistanceEdge module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/mordred.MoeType.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mordred.MolecularDistanceEdge.html" title="mordred.MolecularDistanceEdge module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mordred.MoRSE.html" title="mordred.MoRSE module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">mordredcommunity 2.0.7 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../mordred.html" >mordred package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="modules.html" >Submodules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">mordred.MoeType module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2016-2023, Hirotomo Moriwaki; 2023+, Jackson Burns.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>
