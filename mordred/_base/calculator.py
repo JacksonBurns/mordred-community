@@ -52,6 +52,7 @@ class Calculator(object):
         "_config",
         "_use_fast",
         "_all_fast",
+        "_fast_fns",
     )
 
     def __setstate__(self, dict):
@@ -62,6 +63,7 @@ class Calculator(object):
         self._require_3D = dict.get("_require_3D", False)
         self._use_fast = dict.get("_use_fast", True)
         self._all_fast = dict.get("_all_fast", all(str(d) in _FAST_ENABLED for d in ds))
+        self._fast_fns = None  # lazily built ordered (name, fn) list for the bulk fast path
 
     @classmethod
     def from_json(cls, obj):
@@ -138,6 +140,7 @@ class Calculator(object):
         self._config = config
         self._use_fast = use_fast
         self._all_fast = False  # updated by _register_one
+        self._fast_fns = None  # lazily built ordered (name, fn) list for the bulk fast path
 
         self.register(descs, version=version, ignore_3D=ignore_3D)
 
@@ -170,6 +173,7 @@ class Calculator(object):
         self._kekulizes.clear()
         self._require_3D = False
         self._all_fast = False
+        self._fast_fns = None
 
     def __len__(self):
         return len(self._descriptors)
@@ -197,6 +201,7 @@ class Calculator(object):
 
             self._name_dict[sdesc] = desc
             self._descriptors.append(desc)
+            self._fast_fns = None  # descriptor set changed; rebuild lazily
             # Incrementally maintain _all_fast: once a non-fast descriptor is added it stays False.
             if self._all_fast or len(self._descriptors) == 1:
                 self._all_fast = sdesc in _FAST_ENABLED
@@ -313,17 +318,25 @@ class Calculator(object):
     def _calculate(self, cxt):
         self._cache = {}
         if self._use_fast and self._all_fast and cxt.n_frags == 1:
-            # Bulk fast path: compute all descriptors in one shot, bypassing
-            # the per-descriptor Python loop.  Only used for single-fragment
-            # molecules; multi-fragment molecules fall through to the per-descriptor
-            # path so dependency-based require_connected gates propagate correctly.
-            fast_results = cxt.get_fast_results()
+            # Bulk fast path: call every fast function directly in descriptor order,
+            # bypassing the per-descriptor Python loop, the str(desc) lookups, and the
+            # intermediate results dict.  Only used for single-fragment molecules;
+            # multi-fragment molecules fall through to the per-descriptor path so
+            # dependency-based require_connected gates propagate correctly.
+            if self._fast_fns is None:
+                from .._fast import _DESCRIPTOR_FUNCTIONS
+                self._fast_fns = [
+                    (str(d), _DESCRIPTOR_FUNCTIONS[str(d)]) for d in self._descriptors
+                ]
+            fast_ctx = cxt.get_fast_ctx()
             stack_placeholder = []
-            for desc in self.descriptors:
-                r = fast_results[str(desc)]
-                if isinstance(r, float) and math.isnan(r):
+            for name, fn in self._fast_fns:
+                r = fn(fast_ctx)
+                # NaN is the only value not equal to itself; fast funcs return float|int,
+                # so this is a cheaper undefined-value test than isinstance + math.isnan.
+                if r != r:
                     yield Missing(
-                        FloatingPointError("fast path returned NaN for {}".format(str(desc))),
+                        FloatingPointError("fast path returned NaN for {}".format(name)),
                         stack_placeholder,
                     )
                 else:
