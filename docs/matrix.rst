@@ -34,8 +34,27 @@ where :math:`A` is number of atoms.
 
 LogEE
 -----
+.. warning::
+
+   Despite its name, this descriptor does **not** calculate the published
+   :math:`\mathrm{LogEE}` value. Due to an implementation issue in the original
+   implementation, it instead computes
+
+   .. math::
+
+      \log\!\left(1 + \sum_{i=1}^{N} \exp(\lambda_i)\right).
+
+   This behavior has **not** been corrected in order to preserve backwards
+   compatibility with previous versions and existing descriptor values.
+
+   The equation below is the definition given in the original documentation and
+   is retained here solely for historical completeness. It does **not** describe
+   the value returned by the current implementation.
+
+**Published definition (historical):**
+
 .. math::
-    {\rm LogEE} = \log(\sum_{i = 1}^N \exp(\lambda_i))
+    {\rm LogEE} = \log\!\left(\sum_{i=1}^{N} \exp(\lambda_i)\right)
 
 SM1
 ---
