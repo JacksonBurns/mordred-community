@@ -5,20 +5,41 @@ from ..error import Missing3DCoordinate
 
 
 class Context(object):
-    __slots__ = "_mols", "_coords", "n_frags", "name", "_stack", "config"
+    __slots__ = "_mols", "_coords", "n_frags", "name", "_stack", "config", "_canonical_mol", "_fast_ctx", "_fast_results"
 
-    def __init__(self, mols, coords, n_frags, name, config):
+    def __init__(self, mols, coords, n_frags, name, config, canonical_mol=None):
         self._mols = mols
         self._coords = coords
         self.n_frags = n_frags
         self.name = name
         self.config = config
+        self._canonical_mol = canonical_mol
+        self._fast_ctx = None
+        self._fast_results = None
 
     def __reduce_ex__(self, version):
+        # _fast_ctx and _fast_results are not pickled; parallel workers rebuild lazily.
         return (
             self.__class__,
-            (self._mols, self._coords, self.n_frags, self.name, self.config),
+            (self._mols, self._coords, self.n_frags, self.name, self.config, self._canonical_mol),
         )
+
+    def get_fast_ctx(self):
+        if self._fast_ctx is None:
+            from .._fast import _DescriptorContext
+            self._fast_ctx = _DescriptorContext(self._canonical_mol)
+        return self._fast_ctx
+
+    def get_fast_results(self):
+        """Lazily compute ALL fast-enabled descriptors in one bulk pass and cache."""
+        if self._fast_results is None:
+            from .._fast import _DESCRIPTOR_FUNCTIONS, FAST_ENABLED
+            fast_ctx = self.get_fast_ctx()
+            self._fast_results = {
+                name: _DESCRIPTOR_FUNCTIONS[name](fast_ctx)
+                for name in FAST_ENABLED
+            }
+        return self._fast_results
 
     def __str__(self):
         return self.name
@@ -36,6 +57,9 @@ class Context(object):
             name = mol.GetProp("_Name")
         else:
             name = Chem.MolToSmiles(Chem.RemoveHs(mol, updateExplicitCount=True))
+
+        canonical_mol = Chem.RemoveHs(mol, updateExplicitCount=True)
+        canonical_mol.RemoveAllConformers()
 
         mols, coords = {}, {}
 
@@ -56,7 +80,7 @@ class Context(object):
             m.RemoveAllConformers()
             mols[eh, ke] = m
 
-        return cls(mols, coords, n_frags, name, config)
+        return cls(mols, coords, n_frags, name, config, canonical_mol)
 
     @classmethod
     def from_calculator(cls, calc, mol, id):
