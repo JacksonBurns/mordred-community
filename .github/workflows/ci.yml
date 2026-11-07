@@ -1,7 +1,13 @@
 name: Continuous Integration
 on:
   schedule:
-    - cron: "0 8 * * 1-5"
+    # Off-peak, off-bucket slot. 08:00 UTC sharp was the worst time to run:
+    # top-of-hour scheduler pileup + EU morning runner demand. GitHub-hosted
+    # macOS jobs were sitting in queue 15-20 min and getting auto-cancelled
+    # (all macos-latest cells: conclusion=cancelled, zero steps, no logs),
+    # and the 08:00 run itself arrived up to ~8h late. 03:37 UTC is deep
+    # off-peak for US/EU with no :00/:30 bucket contention.
+    - cron: "37 3 * * 1-5"
   push:
     branches: [main]
   pull_request:
