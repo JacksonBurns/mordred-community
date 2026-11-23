@@ -1,5 +1,7 @@
 from __future__ import print_function
 
+import math
+import os
 import sys
 import warnings
 from types import ModuleType
@@ -14,6 +16,11 @@ from .context import Context
 from .descriptor import Descriptor, MissingValueException, is_descriptor_class
 
 from importlib.metadata import version as importlib_version
+
+try:
+    from .._fast import FAST_ENABLED as _FAST_ENABLED
+except ImportError:  # graceful fallback if _fast is absent
+    _FAST_ENABLED = set()
 
 __version__ = importlib_version("mordredcommunity")
 
@@ -43,6 +50,9 @@ class Calculator(object):
         "_debug",
         "_progress_bar",
         "_config",
+        "_use_fast",
+        "_all_fast",
+        "_fast_fns",
     )
 
     def __setstate__(self, dict):
@@ -51,6 +61,9 @@ class Calculator(object):
         self._explicit_hydrogens = dict.get("_explicit_hydrogens", {True, False})
         self._kekulizes = dict.get("_kekulizes", {True, False})
         self._require_3D = dict.get("_require_3D", False)
+        self._use_fast = dict.get("_use_fast", True)
+        self._all_fast = dict.get("_all_fast", all(str(d) in _FAST_ENABLED for d in ds))
+        self._fast_fns = None  # lazily built ordered (name, fn) list for the bulk fast path
 
     @classmethod
     def from_json(cls, obj):
@@ -98,18 +111,24 @@ class Calculator(object):
                 "_explicit_hydrogens": self._explicit_hydrogens,
                 "_kekulizes": self._kekulizes,
                 "_require_3D": self._require_3D,
+                "_use_fast": self._use_fast,
+                "_all_fast": self._all_fast,
             },
         )
 
     def __getitem__(self, key):
         return self._name_dict[key]
 
-    def __init__(self, descs=None, version=None, ignore_3D=False, config=None):
+    def __init__(self, descs=None, version=None, ignore_3D=False, config=None, use_fast=None):
         if descs is None:
             descs = []
 
         if config is None:
             config = {}
+
+        # use_fast=None means "respect MORDRED_DISABLE_FAST env var, default True"
+        if use_fast is None:
+            use_fast = os.environ.get("MORDRED_DISABLE_FAST", "").strip() not in ("1", "true", "yes")
 
         self._descriptors = []
         self._name_dict = {}
@@ -119,6 +138,9 @@ class Calculator(object):
         self._require_3D = False
         self._debug = False
         self._config = config
+        self._use_fast = use_fast
+        self._all_fast = False  # updated by _register_one
+        self._fast_fns = None  # lazily built ordered (name, fn) list for the bulk fast path
 
         self.register(descs, version=version, ignore_3D=ignore_3D)
 
@@ -150,6 +172,8 @@ class Calculator(object):
         self._explicit_hydrogens.clear()
         self._kekulizes.clear()
         self._require_3D = False
+        self._all_fast = False
+        self._fast_fns = None
 
     def __len__(self):
         return len(self._descriptors)
@@ -177,6 +201,10 @@ class Calculator(object):
 
             self._name_dict[sdesc] = desc
             self._descriptors.append(desc)
+            self._fast_fns = None  # descriptor set changed; rebuild lazily
+            # Incrementally maintain _all_fast: once a non-fast descriptor is added it stays False.
+            if self._all_fast or len(self._descriptors) == 1:
+                self._all_fast = sdesc in _FAST_ENABLED
 
     def register(self, desc, version=None, ignore_3D=False):
         r"""Register descriptors.
@@ -248,6 +276,22 @@ class Calculator(object):
 
         ok = False
         try:
+            if self._use_fast:
+                name = str(desc)
+                if name in _FAST_ENABLED:
+                    r = cxt.get_fast_results()[name]
+                    # fast functions signal undefined values as NaN; convert to Missing
+                    # so the public API matches mordred's Missing semantics.
+                    if isinstance(r, float) and math.isnan(r):
+                        r = Missing(
+                            FloatingPointError("fast path returned NaN for {}".format(name)),
+                            cxt.get_stack(),
+                        )
+                    else:
+                        ok = True
+                    self._cache[desc] = ok, r
+                    return ok, r
+
             r = desc.calculate(**args)
             if self._debug:
                 self._check_rtype(desc, r)
@@ -273,6 +317,32 @@ class Calculator(object):
 
     def _calculate(self, cxt):
         self._cache = {}
+        if self._use_fast and self._all_fast and cxt.n_frags == 1:
+            # Bulk fast path: call every fast function directly in descriptor order,
+            # bypassing the per-descriptor Python loop, the str(desc) lookups, and the
+            # intermediate results dict.  Only used for single-fragment molecules;
+            # multi-fragment molecules fall through to the per-descriptor path so
+            # dependency-based require_connected gates propagate correctly.
+            if self._fast_fns is None:
+                from .._fast import _DESCRIPTOR_FUNCTIONS
+                self._fast_fns = [
+                    (str(d), _DESCRIPTOR_FUNCTIONS[str(d)]) for d in self._descriptors
+                ]
+            fast_ctx = cxt.get_fast_ctx()
+            stack_placeholder = []
+            for name, fn in self._fast_fns:
+                r = fn(fast_ctx)
+                # NaN is the only value not equal to itself; fast funcs return float|int,
+                # so this is a cheaper undefined-value test than isinstance + math.isnan.
+                if r != r:
+                    yield Missing(
+                        FloatingPointError("fast path returned NaN for {}".format(name)),
+                        stack_placeholder,
+                    )
+                else:
+                    yield r
+            return
+
         for desc in self.descriptors:
             _, r = self._calculate_one(cxt, desc, True)
             yield r
