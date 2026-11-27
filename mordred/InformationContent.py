@@ -44,7 +44,18 @@ class BFSTree(object):
         self.visited.add(i)
 
     def expand(self):
+        # Mark every atom already in the tree before the leaves are expanded.
+        # Otherwise, of two bonded atoms on the same level, the one expanded
+        # first adopts the other as a child and not the other way round, so the
+        # tree depends on the bond order of the input (issue #28).
+        self._mark(self.tree)
         self._expand(self.tree)
+
+    def _mark(self, tree):
+        for src, dst in tree.items():
+            self.visited.add(src)
+            if dst:
+                self._mark(dst)
 
     def _expand(self, tree):
         for src, dst in list(tree.items()):
